@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^16.1.4",
     "gsap": "^3.11.5",
     "next": "13.3.0",
-    "next-compose-plugins": "^2.2.1",
     "next-auth": "^4.22.1",
+    "next-compose-plugins": "^2.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.3",
