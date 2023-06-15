@@ -1,0 +1,136 @@
+ @font-face {
+  font-family: monserrat;
+  src: url('/Montserrat-VariableFont_wght.ttf');
+ }
+
+ .container {
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+ }
+
+ .horizontalScrollContainer {
+  background-image: url("../pages/assets/images/warehouse5.jpg");
+  background-size: 100% 100%;
+  margin: 0;
+  position: absolute;
+  height: 100vh;
+  width: 5000px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+ }
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+ .horizontalScrollContainer:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+ }
+
+ .sectionOne {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+
+  .sectionThree {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  }
+
+  .title {
+    color: #31393C;
+    font-family: monserrat;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    margin-top: 100px;
+  }
+  
+  .logo {
+    width: 140px;
+  }
+  
+  .text {
+    display: inline-block;
+    color: transparent;
+    font-family: monserrat;
+    background-image: linear-gradient(180deg, #F3E8EE, #F7CE5B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 175px;
+    font-size: 84px;
+    font-weight: 600;
+  }
+
+  .scrollToExplore{
+    display: flex;
+    width: 95vw;
+    justify-content: space-between;
+    margin-top: 270px;
+  }
+
+  .arrow {
+    width: 75px;
+    height: 75px; 
+  }
+  
+  .description {
+    font-size: 21px;
+    font-family: monserrat;
+    font-weight: 700;
+    color: #F3E8EE;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+    margin-top: 24px;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 0;
+    padding-left: 0;
+    list-style: none;
+    }
+  
+  .button {
+    color: #fff;
+    font-family: monserrat;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
+    font-size: 11px;
+    font-weight: 400;
+    width: 200px;
+    height: 225px;
+    padding: 8px 16px;
+    background-image: url('../public/dummy2.png');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    margin-left: 60px;
+    margin-top: 350px;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #8EF9F3;
+    font-family: monserrat;
+    font-size: 21px;
+    font-weight: 400;
+    margin: 0 14px;
+    cursor: pointer;
+  }
+  

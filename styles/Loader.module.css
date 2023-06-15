@@ -1,0 +1,36 @@
+.app #content {
+    transition-duration: 1s;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .loader {
+    position: fixed;
+    z-index: 2;
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+  }
+  
+.loader .logo {
+    width: 250px; 
+    height: 250px;
+  
+}
