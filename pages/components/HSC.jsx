@@ -19,14 +19,13 @@ const HSC = () => {
   }, []);
 
   const contentRef = useRef(null);
-  let scrollDelta = 0;
-  let requestId;
 
   const dragScroll = (e) => {
     e.preventDefault();
     const startX = e.pageX || (e.touches && e.touches[0].pageX);
     const dragScrollSpeed = 0.5;
-  
+    let scrollDelta = 0;
+    let requestId;
 
     const handleMouseMove = (e) => {
       e.preventDefault();
@@ -47,8 +46,6 @@ const HSC = () => {
 
       }, 300);
     };
-
-    
 
     const scrollPage = () => {
       document.documentElement.scrollLeft -= scrollDelta;
@@ -107,19 +104,15 @@ const HSC = () => {
 
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.addEventListener("touchstart", dragScroll);
       document.addEventListener(scrollEvent, scrollHorizontally, {
         passive: false,
       });
-      contentRef.current.addEventListener("touchend", dragScroll);
       document.addEventListener(firefoxScrollEvent, scrollHorizontally, {
         passive: false,
       });
     } else {
       contentRef.current.attachEvent("onmousedown", dragScroll);
-      contentRef.current.attachEvent("ontouchstart", dragScroll);
       document.attachEvent("on" + scrollEvent, scrollHorizontally);
-      contentRef.current.attachEvent("ontouchend", dragScroll);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
 
@@ -154,4 +147,5 @@ const HSC = () => {
   );
 };
 export default HSC;
+
 
