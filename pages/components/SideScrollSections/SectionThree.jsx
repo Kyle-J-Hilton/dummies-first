@@ -16,6 +16,7 @@ const SectionThree = () => {
   useLayoutEffect(() => {
     const container = leftArrowRef.current;
     const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+    let docWidth = window.innerHeight * 9.26;
     let arrowL = docWidth / 2 - 100;
     if (isMobile) {
       // Mobile-specific behavior
