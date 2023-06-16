@@ -144,12 +144,12 @@ const HSC = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container  + (isLoading ? ` ${styles.jiggle}` : "")}>
       <div ref={contentRef} className={styles.horizontalScrollContainer}>
         <SectionOne className={styles.sections} />
         <SectionTwo className={styles.sections} />
         <SectionThree className={styles.sections} />
-        <a href='https://twitter.com/DummiesLab' className={styles.links + (isLoading ? ` ${styles.jiggle}` : "")}> </a>
+        <a href='https://twitter.com/DummiesLab' className={styles.links}> </a>
         <SectionFour className={styles.sections} />
         <SectionFive className={styles.sections} />
       </div>
