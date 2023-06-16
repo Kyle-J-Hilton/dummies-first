@@ -20,6 +20,14 @@ const HSC = () => {
 
   const contentRef = useRef(null);
 
+  useEffect(() => {
+    // Simulate loading completion after 2 seconds (replace this with your own loading logic)
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 4500);
+  }, []);
+
+
   const dragScroll = (e) => {
     e.preventDefault();
     const startX = e.pageX || (e.touches && e.touches[0].pageX);
