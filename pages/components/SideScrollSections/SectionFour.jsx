@@ -9,7 +9,7 @@ const SectionFour = () => {
 
     return (
         <div className={styles.sectionOne} >
-          <a href='https://twitter.com/DummiesLab' className={styles.links}> twitters</a>
+  
           
     </div>
     );
