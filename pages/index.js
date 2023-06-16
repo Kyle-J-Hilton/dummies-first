@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import HSC from "./components/HSC";
 import Loader from "./components/Loader";
-import ogImgUrl from "./assets/images/airpods.png"
+import ogImgUrl from "./assets/images/airpods.png";
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Dummies Lab",
-    "url": "https://www.dummieslab.com",
+    "url": "https://www.dummies.ooo/",
     "description": "Explore the world of NFTs with Dummies Lab. Discover unique and limited-edition artworks.",
     "potentialAction": {
       "@type": "SearchAction",
@@ -35,7 +35,7 @@ const Home = () => {
     	  <meta property="og:type" content='website' />
     	  <meta property="og:description" content='Discover the exciting world of Dummies Lab, a leading NFT project revolutionizing the digital art space. Explore the latest creation from the team that brought you Cha Cha Vans, and collect unique, limited-edition artworks.' />
     	  <meta property="og:image" content={ogImgUrl} />
-    	  <meta property="og:url" content='https://www.dummieslab.com' />
+    	  <meta property="og:url" content='https://www.dummies.ooo/' />
 
         <script
           type="application/ld+json"
