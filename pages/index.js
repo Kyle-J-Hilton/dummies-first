@@ -17,7 +17,7 @@ const Home = () => {
     "description": "Explore the world of NFTs with Dummies Lab. Discover unique and limited-edition artworks.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.dummieslab.com/search?q={search_term_string}",
+      "target": "https://www.dummies.ooo/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
