@@ -4,10 +4,10 @@
 
   @keyframes fadeOut {
     from {
-      opacity: 1;
+      height: 100%;
     }
     to {
-      opacity: 0;
+      height: 0%;
     }
   }
   
