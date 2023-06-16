@@ -9,6 +9,23 @@
   margin: 0;
 }
 
+@keyframes jiggle {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+.jiggle {
+  animation: jiggle 0.5s infinite;
+}
+
+
 .horizontalScrollContainer {
   background-image: url("../pages/assets/images/dummybackground.jpg");
   background-size: 100% 100%;
