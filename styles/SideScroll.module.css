@@ -99,6 +99,9 @@
   width: 95px;
   z-index: 9;
 }
+.links:hover {
+  border: 2px solid #f7ce5b;
+}
 
 
 @media (max-width: 415px) {
