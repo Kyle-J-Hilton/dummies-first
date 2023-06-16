@@ -26,20 +26,20 @@ const Home = () => {
     <div>
       <Head>
         <title>Dummies Lab - Bitcoin NFTs</title>
-        <meta name='description' content='Discover the exciting world of Dummies Lab, a leading NFT project revolutionizing the digital art space. Explore the latest creation from the team that brought you Cha Cha Vans, and collect unique, limited-edition artworks.' />
+        
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:locale" content="en_US" />
     	  <meta property="og:site_name" content='dummies lab' />
     	  <meta property="og:type" content='website' />
-    	  <meta property="og:description" content='Discover the exciting world of Dummies Lab, a leading NFT project revolutionizing the digital art space. Explore the latest creation from the team that brought you Cha Cha Vans, and collect unique, limited-edition artworks.' />
+    	  
     	  <meta property="og:image" content="../public/favicon.ico" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../public/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon.ico" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
