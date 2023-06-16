@@ -13,11 +13,11 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Dummies Lab",
-    "url": "https://www.dummies.ooo/",
+    "url": "https://www.dummies-lab.com/",
     "description": "Explore the world of NFTs with Dummies Lab. Discover unique and limited-edition artworks.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.dummieslab.com/search?q={search_term_string}",
+      "target": "https://www.dummies-lab.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -35,7 +35,7 @@ const Home = () => {
     	  <meta property="og:type" content='website' />
     	  <meta property="og:description" content='Discover the exciting world of Dummies Lab, a leading NFT project revolutionizing the digital art space. Explore the latest creation from the team that brought you Cha Cha Vans, and collect unique, limited-edition artworks.' />
     	  <meta property="og:image" content="/favicon.ico" />
-    	  <meta property="og:url" content='https://www.dummies.ooo/' />
+    	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
