@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import HSC from "./components/HSC";
 import Loader from "./components/Loader";
-import ogImgUrl from "./assets/images/airpods.png";
+import {ogImgUrl} from "./assets/images/airpods.png";
 
 
 const Home = () => {
