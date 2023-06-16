@@ -147,7 +147,7 @@ const HSC = () => {
         <SectionOne className={styles.sections} />
         <SectionTwo className={styles.sections} />
         <SectionThree className={styles.sections} />
-        <a href='https://twitter.com/DummiesLab' className={styles.links}> </a>
+        <a href='https://twitter.com/DummiesLab' className={styles.links + (isLoading ? ` ${styles.jiggle}` : "")}> </a>
         <SectionFour className={styles.sections} />
         <SectionFive className={styles.sections} />
       </div>
