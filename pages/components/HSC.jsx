@@ -20,6 +20,8 @@ const HSC = () => {
 
   const contentRef = useRef(null);
 
+ const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Simulate loading completion after 2 seconds (replace this with your own loading logic)
     setTimeout(() => {
