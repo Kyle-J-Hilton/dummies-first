@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedLogo from "../assets/images/logorender.gif";
+import AnimatedLogo from "../assets/images/loadinglogo.gif";
 import styles from "../../styles/Loader.module.css";
 import Image from "next/image";
 
