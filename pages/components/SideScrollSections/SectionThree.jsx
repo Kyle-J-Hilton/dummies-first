@@ -15,32 +15,74 @@ const SectionThree = () => {
 
   useLayoutEffect(() => {
     const container = leftArrowRef.current;
-    gsap.to(container, {
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        markers: false,
-        start: 1700,
-        trigger: container,
-        horizontal: true,
-        toggleActions: "reverse none play none",
-      },
-    });
+    const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+    let arrowL = docWidth / 2 - 100;
+    if (isMobile) {
+      // Mobile-specific behavior
+
+      gsap.to(container, {
+        opacity: 0.5,
+        duration: 0.5,
+        scrollTrigger: {
+          markers: false,
+          start: arrowL,
+          trigger: container,
+          horizontal: true,
+          toggleActions: "reverse none play none",
+        },
+      });
+    } else {
+      // Desktop behavior
+
+      gsap.to(container, {
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          markers: false,
+          start: 1700,
+          trigger: container,
+          horizontal: true,
+          toggleActions: "reverse none play none",
+        },
+      });
+    }
   });
 
   useLayoutEffect(() => {
     const containerOne = rightArrowRef.current;
-    gsap.to(containerOne, {
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        markers: false,
-        start: "+=1000",
-        trigger: containerOne,
-        horizontal: true,
-        toggleActions: "play none reverse none",
-      },
-    });
+    const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+    let docWidth = window.innerHeight * 9.26;
+
+    let arrowR = docWidth / 2 + 100;
+    if (isMobile) {
+      // Mobile-specific behavior
+
+      gsap.to(containerOne, {
+        opacity: 0.5,
+        duration: 0.5,
+        scrollTrigger: {
+          markers: false,
+          start: arrowR,
+          trigger: containerOne,
+          horizontal: true,
+          toggleActions: "play none reverse none",
+        },
+      });
+    } else {
+      // Desktop behavior
+
+      gsap.to(containerOne, {
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          markers: false,
+          start: "+=1000",
+          trigger: containerOne,
+          horizontal: true,
+          toggleActions: "play none reverse none",
+        },
+      });
+    }
   });
 
   return (
