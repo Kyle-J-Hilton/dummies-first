@@ -6,7 +6,7 @@ import GithubProvider from "next-auth/providers/github"
 require('dotenv').config();
 
 export const authOptions = {
-  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
+  secret: 'f100f0e710bae79f828bbc6f039d077a544ac18c01e90e1b9c287043a6fbfbfb',
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
