@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import HSC from "./components/HSC";
 import Loader from "./components/Loader";
-import {ogImgUrl} from "./assets/images/airpods.png";
+import ogImgUrl from "./assets/images/airpods.png";
 
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
     "description": "Explore the world of NFTs with Dummies Lab. Discover unique and limited-edition artworks.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.dummies.ooo/search?q={search_term_string}",
+      "target": "https://www.dummieslab.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -34,8 +34,19 @@ const Home = () => {
     	  <meta property="og:site_name" content='dummies lab' />
     	  <meta property="og:type" content='website' />
     	  <meta property="og:description" content='Discover the exciting world of Dummies Lab, a leading NFT project revolutionizing the digital art space. Explore the latest creation from the team that brought you Cha Cha Vans, and collect unique, limited-edition artworks.' />
-    	  <meta property="og:image" content={ogImgUrl} />
+    	  <meta property="og:image" content="/favicon.ico" />
     	  <meta property="og:url" content='https://www.dummies.ooo/' />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
+        <meta name="twitter:title" content="@DummiesLab" />
+        <meta name="twitter:description" content="Bout to go DUMMY" />
+        <meta name="twitter:image" content="/favicon.ico" />
+
 
         <script
           type="application/ld+json"
