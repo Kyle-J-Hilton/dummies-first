@@ -1,6 +1,6 @@
 @font-face {
-  font-family: monserrat;
-  src: url("/Montserrat-VariableFont_wght.ttf");
+  font-family: eightbit;
+  src: url("/eightbitArcadeIn.ttf");
 }
 
 .container {
@@ -70,6 +70,7 @@
   margin-top: 175px;
   font-size: 84px;
   font-weight: 600;
+  font-family: eightbit;
 }
 
 .scrollToExplore {
@@ -99,15 +100,16 @@
   width: 95px;
   z-index: 9;
 }
+
 .links:hover {
-  border: 2px solid #1DA1F2;
+  border: 2px solid #f7ce5b;
 }
 
 
 @media (max-width: 515px) {
   .horizontalScrollContainer {
     background-image: url("../pages/assets/images/dummybackground.jpg");
-    background-size: 100% 100%;
+    background-size: auto 100%;
     margin: 0;
     position: absolute;
     height: 100vh;
@@ -125,9 +127,15 @@
     justify-content: space-between;
     margin-top: 30vh;
   }
+
   .links {
-     border: 2px solid #1DA1F2;
+    position:absolute;
+    left: 537vh;
+    top: 73vh;
+    height: 95px;
+    width: 95px;
+    z-index: 9;
   }
+
 }
 
-  
