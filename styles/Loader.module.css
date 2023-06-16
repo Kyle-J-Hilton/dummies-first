@@ -8,7 +8,7 @@
     }
     to {
       height: 0%;
-      display: none;
+      
     }
   }
   
@@ -33,5 +33,8 @@
 .loader .logo {
     width: 250px; 
     height: 250px;
-  
+   animation-name: fadeOut;
+    animation-duration: 0.3s;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
 }
