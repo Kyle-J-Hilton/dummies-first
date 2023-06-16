@@ -97,20 +97,10 @@
   top: 73vh;
   height: 95px;
   width: 95px;
-
+  z-index: 9;
 }
 
 
-
-.link {
-  text-decoration: none;
-  color: #8ef9f3;
-  font-family: monserrat;
-  font-size: 21px;
-  font-weight: 400;
-  margin: 0 14px;
-  cursor: pointer;
-}
 @media (max-width: 415px) {
   .horizontalScrollContainer {
     background-image: url("../pages/assets/images/dummybackground.jpg");
