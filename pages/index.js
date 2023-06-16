@@ -34,7 +34,7 @@ const Home = () => {
     	  <meta property="og:site_name" content='dummies lab' />
     	  <meta property="og:type" content='website' />
     	  <meta property="og:description" content='Discover the exciting world of Dummies Lab, a leading NFT project revolutionizing the digital art space. Explore the latest creation from the team that brought you Cha Cha Vans, and collect unique, limited-edition artworks.' />
-    	  <meta property="og:image" content="/favicon.ico" />
+    	  <meta property="og:image" content="../public/favicon.ico" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
@@ -45,7 +45,7 @@ const Home = () => {
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
         <meta name="twitter:title" content="@DummiesLab" />
         <meta name="twitter:description" content="Bout to go DUMMY" />
-        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="twitter:image" content="../public/favicon.ico" />
 
 
         <script
