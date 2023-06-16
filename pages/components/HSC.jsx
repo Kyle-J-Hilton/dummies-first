@@ -144,8 +144,8 @@ const HSC = () => {
   }, []);
 
   return (
-    <div className={styles.container  + (isLoading ? ` ${styles.jiggle}` : "")}>
-      <div ref={contentRef} className={styles.horizontalScrollContainer}>
+    <div className={styles.container }>
+      <div ref={contentRef} className={styles.horizontalScrollContainer + (isLoading ? ` ${styles.jiggle}` : "")}>
         <SectionOne className={styles.sections} />
         <SectionTwo className={styles.sections} />
         <SectionThree className={styles.sections} />
