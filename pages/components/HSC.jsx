@@ -12,7 +12,7 @@ const HSC = () => {
  
 
   useEffect(() => {
-    let docWidth = 5000;
+    let docWidth = window.innerHeight * 9.26;
     let windowWidth = window.innerWidth;
     let scrollToPosition = docWidth / 2 - windowWidth / 2;
     window.scrollTo(scrollToPosition, 0);
@@ -139,6 +139,7 @@ const HSC = () => {
         <SectionOne className={styles.sections} />
         <SectionTwo className={styles.sections} />
         <SectionThree className={styles.sections} />
+        <a href='https://twitter.com/DummiesLab' className={styles.links}> </a>
         <SectionFour className={styles.sections} />
         <SectionFive className={styles.sections} />
       </div>
