@@ -153,6 +153,7 @@
   width: 75px;
   height: 75px;
   background-image: url("../pages/assets/images/arrowleft.png");
+  background-color: rgba(0,0,0,0);
   cursor: pointer;
   z-index: 8;
 }
@@ -160,6 +161,7 @@
   width: 75px;
   height: 75px;
   background-image: url("../pages/assets/images/arrowright.png");
+  background-color: rgba(0,0,0,0);
   cursor: pointer;
   z-index: 8;
 }
@@ -195,10 +197,16 @@
     width: 924vh;
   }
 
-  .arrow {
-    width: 25px;
-    height: 25px;
-  }
+ .arrowR {
+  width: 25px;
+  height: 25px;
+
+}
+.arrowL {
+  width: 25px;
+  height: 25px;
+ 
+}
 
   .scrollToExplore {
     display: flex;
