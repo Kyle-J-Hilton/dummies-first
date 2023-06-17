@@ -1,8 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
 import styles from "../../../styles/SideScroll.module.css";
-import Image from "next/image";
-import ArrowRight from "../../assets/images/arrowright.png";
-import ArrowLeft from "../../assets/images/arrowleft.png";
 
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -89,17 +86,19 @@ const SectionThree = () => {
   return (
     <div className={styles.sectionThree}>
       <div className={styles.scrollToExplore}>
-        <Image
+        <button
           ref={leftArrowRef}
-          className={styles.arrow}
-          src={ArrowLeft}
+          className={styles.arrowL}
+          
           alt="arrow left"
+          onClick={window.scrollTo(0, 0)}
         />
-        <Image
+        <button
           ref={rightArrowRef}
-          className={styles.arrow}
-          src={ArrowRight}
+          className={styles.arrowR}
+          
           alt="arrow right"
+          onClick={window.scrollTo(900vh, 0)}
         />
       </div>
     </div>
