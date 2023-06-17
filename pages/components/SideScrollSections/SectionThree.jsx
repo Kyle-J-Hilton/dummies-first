@@ -95,14 +95,14 @@ const SectionThree = () => {
   return (
     <div className={styles.sectionThree}>
       <div className={styles.scrollToExplore}>
-        <button
+        <a
           ref={leftArrowRef}
           className={styles.arrowL}
           
           alt="arrow left"
           onClick={handleLeftArrowClick}
         />
-        <button
+        <a
           ref={rightArrowRef}
           className={styles.arrowR}
           
