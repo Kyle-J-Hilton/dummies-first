@@ -82,6 +82,8 @@ const SectionThree = () => {
       });
     }
   });
+  let docWidth = window.innerHeight * 9.25;
+  
 
   return (
     <div className={styles.sectionThree}>
@@ -98,7 +100,7 @@ const SectionThree = () => {
           className={styles.arrowR}
           
           alt="arrow right"
-          onClick={window.scrollTo(900vh, 0)}
+          onClick={window.scrollTo(docWidth, 0)}
         />
       </div>
     </div>
