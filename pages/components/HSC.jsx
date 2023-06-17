@@ -92,7 +92,7 @@ const HSC = () => {
      touchScrollDelta = 0;
      window.cancelAnimationFrame(requestTouchId);
     
-    }
+    
 
       const handleTouchMove = (e) => {
         e.preventDefault();
@@ -103,7 +103,7 @@ const HSC = () => {
       };
 
       const handleTouchUp = () => {
-       e.preventDefault();
+       
         setTimeout(() => {
           document.removeEventListener("touchmove", handleTouchMove);
           document.removeEventListener("touchend", handleTouchUp);
@@ -128,8 +128,9 @@ const HSC = () => {
             requestTouchId = window.requestAnimationFrame(scrollPageTouch);
           }
      };
-
-  
+      contentRef.current.addEventListener("touchmove", handleTouchMove);
+      contentRef.current.addEventListener("touchend", handleTouchUp);
+    };
   
 
   const scrollHorizontally = (e) => {
@@ -167,8 +168,7 @@ const HSC = () => {
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
       contentRef.current.addEventListener("ontouchstart", handleTouchStart);
-      contentRef.current.addEventListener("touchmove", handleTouchMove);
-      contentRef.current.addEventListener("touchend", handleTouchUp);
+    
       document.addEventListener(scrollEvent, scrollHorizontally, {
         passive: false,
       });
@@ -178,8 +178,7 @@ const HSC = () => {
     } else {
       contentRef.current.attachEvent("onmousedown", dragScroll);
      contentRef.current.attachEvent("ontouchstart", handleTouchStart);
-     contentRef.current.addEventListener("touchmove", handleTouchMove);
-      contentRef.current.addEventListener("touchend", handleTouchUp);
+     
       document.attachEvent("on" + scrollEvent, scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
@@ -188,8 +187,7 @@ const HSC = () => {
       if (window.removeEventListener) {
         contentRef.current.removeEventListener("mousedown", dragScroll);
        contentRef.current.removeEventListener("ontouchstart", handleTouchStart);
-        contentRef.current.removeEventListener("touchmove", handleTouchMove);
-        contentRef.current.removeEventListener("touchend", handleTouchUp);
+
         document.removeEventListener(scrollEvent, scrollHorizontally, {
           passive: false,
         });
@@ -199,8 +197,7 @@ const HSC = () => {
       } else {
         contentRef.current.detachEvent("onmousedown", dragScroll);
        contentRef.current.detachEvent("ontouchstart", handleTouchStart);
-        contentRef.current.removeEventListener("touchmove", handleTouchMove);
-        contentRef.current.removeEventListener("touchend", handleTouchUp);
+   
         document.detachEvent("on" + scrollEvent, scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
