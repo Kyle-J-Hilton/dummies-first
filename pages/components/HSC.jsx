@@ -81,15 +81,17 @@ const HSC = () => {
   }; 
 
     
-    let touchStartX = 0;
-    let touchScrollDelta = 0;
-    let requestTouchId;
-    let touchScrollSpeed= 7;
+    
+    
+    
+    
 
     const handleTouchStart = (e) => {
      e.preventDefault();
-     touchStartX = e.touches[0].pageX;
-     touchScrollDelta = 0;
+     const touchStartX = e.touches[0].pageX;
+     let touchScrollDelta = 0;
+     let touchScrollSpeed= 7;
+     let requestTouchId;
      window.cancelAnimationFrame(requestTouchId);
     
     
