@@ -11,13 +11,13 @@
 
 @keyframes jiggle {
   33% {
-    transform: translateX(-8px);
+    transform: translateX(-6px);
   }
   67% {
-    transform: translateX(8px);
+    transform: translateX(6px);
   }
   100% {
-    transform: translateX(-8px);
+    transform: translateX(-6px);
   }
 }
 
