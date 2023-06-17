@@ -92,7 +92,7 @@ const HSC = () => {
      touchStartX = e.touches[0].pageX;
      touchScrollDelta = 0;
      window.cancelAnimationFrame(requestTouchId);
-  };
+  
 
 
     const handleTouchMove = (e) => {
@@ -134,7 +134,7 @@ const HSC = () => {
     document.addEventListener("touchmove", handleTouchMove);
     document.addEventListener("touchend", handleTouchUp);
   };
-
+};
   const scrollHorizontally = (e) => {
     e.preventDefault();
     e = window.event || e;
