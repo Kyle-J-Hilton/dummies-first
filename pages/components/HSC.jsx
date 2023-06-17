@@ -169,7 +169,7 @@ const HSC = () => {
 
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.addEventListener("ontouchstart", touchScroll);
+      contentRef.current.addEventListener("ontouchstart", handleTouchStart);
       document.addEventListener(scrollEvent, scrollHorizontally, {
         passive: false,
       });
@@ -178,7 +178,7 @@ const HSC = () => {
       });
     } else {
       contentRef.current.attachEvent("onmousedown", dragScroll);
-     contentRef.current.attachEvent("ontouchstart", touchScroll);
+     contentRef.current.attachEvent("ontouchstart", handleTouchStart);
       document.attachEvent("on" + scrollEvent, scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
@@ -186,7 +186,7 @@ const HSC = () => {
     return () => {
       if (window.removeEventListener) {
         contentRef.current.removeEventListener("mousedown", dragScroll);
-       contentRef.current.removeEventListener("ontouchstart", touchScroll);
+       contentRef.current.removeEventListener("ontouchstart", handleTouchStart);
         document.removeEventListener(scrollEvent, scrollHorizontally, {
           passive: false,
         });
@@ -195,7 +195,7 @@ const HSC = () => {
         });
       } else {
         contentRef.current.detachEvent("onmousedown", dragScroll);
-       contentRef.current.detachEvent("ontouchstart", touchScroll);
+       contentRef.current.detachEvent("ontouchstart", handleTouchStart);
         document.detachEvent("on" + scrollEvent, scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
