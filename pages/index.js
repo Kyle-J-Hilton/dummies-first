@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Dummies Lab - Bitcoin NFTs</title>
+        <title>Dummies Lab</title>
         
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
@@ -34,7 +34,7 @@ const Home = () => {
     	  <meta property="og:site_name" content='dummies lab' />
     	  <meta property="og:type" content='website' />
     	  
-    	  <meta property="og:image" content="../public/favicon.ico" />
+    	  <meta property="og:image" content="/favicon.ico" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
         <link rel="apple-touch-icon" sizes="180x180" href="../public/favicon.ico" />
