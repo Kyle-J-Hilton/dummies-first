@@ -152,7 +152,7 @@
 .arrowR {
   width: 75px;
   height: 75px;
-  background-image: url("../pages/assets/images/arrowleft.png");
+  background-image: url("../pages/assets/images/arrowright.png");
    background-repeat: no-repeat;
   background-size:cover;
   background-color: rgba(0,0,0,0);
@@ -162,7 +162,7 @@
 .arrowL {
   width: 75px;
   height: 75px;
-  background-image: url("../pages/assets/images/arrowright.png");
+  background-image: url("../pages/assets/images/arrowleft.png");
    background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(0,0,0,0);
