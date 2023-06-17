@@ -18,8 +18,6 @@ const HSC = () => {
   let startX = 0;
   let scrollDelta = 0;
   let requestId;
-
-   const contentRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
