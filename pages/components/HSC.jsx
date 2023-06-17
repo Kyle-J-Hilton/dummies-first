@@ -79,20 +79,27 @@ const HSC = () => {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
    
+  }; 
+
+ 
+    const contentRef = useRef(null);
+    let touchStartX = 0;
+    let touchScrollDelta = 0;
+    let requestTouchId;
+    let touchScrollSpeed= 7;
+
+    const handleTouchStart = (e) => {
+     touchStartX = e.touches[0].pageX;
+     touchScrollDelta = 0;
+     window.cancelAnimationFrame(requestTouchId);
   };
 
-  const touchScroll = (e) => {
-    e.preventDefault();
-    const startX = e.pageX || (e.touches && e.touches[0].pageX);
-    const dragScrollSpeed = 0.7;
-    let scrollDelta = 0;
-    let requestId;
 
     const handleTouchMove = (e) => {
       e.preventDefault();
       const x = e.touches ? e.touches[0].pageX : e.pageX;
-      scrollDelta = ((x - startX) * dragScrollSpeed) / 3;
-      window.cancelAnimationFrame(requestId);
+      touchScrollDelta = ((x - touchStartX) * touchScrollSpeed) / 3;
+      window.cancelAnimationFrame(requestTouchId);
       requestId = window.requestAnimationFrame(scrollPageTouch);
      
     };
@@ -101,25 +108,25 @@ const HSC = () => {
       setTimeout(() => {
         document.removeEventListener("touchmove", handleTouchMove);
         document.removeEventListener("touchend", handleTouchUp);
-        window.cancelAnimationFrame(requestId);
+        window.cancelAnimationFrame(requestTouchId);
 
       }, 500);
     };
 
     const scrollPageTouch = () => {
-      document.documentElement.scrollLeft -= scrollDelta;
-      document.body.scrollLeft -= scrollDelta;
+      document.documentElement.scrollLeft -= touchScrollDelta;
+      document.body.scrollLeft -= touchScrollDelta;
 
-      if (scrollDelta > 0) {
-        scrollDelta -= 0.2;
+      if (touchScrollDelta > 0) {
+        touchScrollDelta -= 0.2;
 
-        if (scrollDelta < 0) scrollDelta = 0;
-        requestId = window.requestAnimationFrame(scrollPageTouch);
-      } else if (scrollDelta < 0) {
-        scrollDelta += 0.2;
+        if (touchScrollDelta < 0) touchScrollDelta = 0;
+        requestTouchId = window.requestAnimationFrame(scrollPageTouch);
+      } else if (touchScrollDelta < 0) {
+        touchScrollDelta += 0.2;
 
-        if (scrollDelta > 0) scrollDelta = 0;
-        requestId = window.requestAnimationFrame(scrollPageTouch);
+        if (touchScrollDelta > 0) touchScrollDelta = 0;
+        requestTouchId = window.requestAnimationFrame(scrollPageTouch);
       }
     };
 
