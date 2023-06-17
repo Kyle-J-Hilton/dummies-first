@@ -40,8 +40,8 @@ const Home = () => {
         <link rel="apple-touch-icon" sizes="180x180" href="../public/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon.ico" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="theme-color" content="#8EF9F3" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
         <meta name="twitter:title" content="Dummies Lab" />
     
