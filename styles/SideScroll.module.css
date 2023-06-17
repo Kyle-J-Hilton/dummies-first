@@ -153,6 +153,8 @@
   width: 75px;
   height: 75px;
   background-image: url("../pages/assets/images/arrowleft.png");
+   background-repeat: no-repeat;
+  background-size:cover;
   background-color: rgba(0,0,0,0);
   cursor: pointer;
   z-index: 8;
@@ -161,6 +163,8 @@
   width: 75px;
   height: 75px;
   background-image: url("../pages/assets/images/arrowright.png");
+   background-repeat: no-repeat;
+  background-size: cover;
   background-color: rgba(0,0,0,0);
   cursor: pointer;
   z-index: 8;
@@ -190,7 +194,7 @@
 @media (max-width: 515px) {
   .horizontalScrollContainer {
     background-image: url("../pages/assets/images/dummybackground.jpg");
-    background-size: auto;
+    background-size: cover;
     margin: 0;
     position: absolute;
     height: 100vh;
