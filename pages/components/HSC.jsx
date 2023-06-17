@@ -19,8 +19,7 @@ const HSC = () => {
   }, []);
 
   const contentRef = useRef(null);
-
- const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Simulate loading completion after 2 seconds (replace this with your own loading logic)
@@ -82,7 +81,7 @@ const HSC = () => {
   }; 
 
  
-    const contentRef = useRef(null);
+    
     let touchStartX = 0;
     let touchScrollDelta = 0;
     let requestTouchId;
@@ -134,7 +133,7 @@ const HSC = () => {
     document.addEventListener("touchmove", handleTouchMove);
     document.addEventListener("touchend", handleTouchUp);
   };
-};
+
   const scrollHorizontally = (e) => {
     e.preventDefault();
     e = window.event || e;
@@ -216,5 +215,4 @@ const HSC = () => {
   );
 };
 export default HSC;
-
 
