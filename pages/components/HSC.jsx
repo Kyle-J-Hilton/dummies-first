@@ -29,7 +29,7 @@ const HSC = () => {
     }, 5500);
    setTimeout(() => {
       setIsLoading(false);
-    }, 6000);
+    }, 6200);
   }, []);
 
 
@@ -53,8 +53,7 @@ const HSC = () => {
       setTimeout(() => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
-        document.removeEventListener("touchmove", handleMouseMove);
-        document.removeEventListener("touchend", handleMouseUp);
+      
         window.cancelAnimationFrame(requestId);
 
       }, 300);
@@ -79,8 +78,54 @@ const HSC = () => {
 
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
-    document.addEventListener("touchmove", handleMouseMove);
-    document.addEventListener("touchend", handleMouseUp);
+   
+  };
+
+  const touchScroll = (e) => {
+    e.preventDefault();
+    const startX = e.pageX || (e.touches && e.touches[0].pageX);
+    const dragScrollSpeed = 0.7;
+    let scrollDelta = 0;
+    let requestId;
+
+    const handleTouchMove = (e) => {
+      e.preventDefault();
+      const x = e.touches ? e.touches[0].pageX : e.pageX;
+      scrollDelta = ((x - startX) * dragScrollSpeed) / 3;
+      window.cancelAnimationFrame(requestId);
+      requestId = window.requestAnimationFrame(scrollPageTouch);
+     
+    };
+
+    const handleTouchUp = () => {
+      setTimeout(() => {
+        document.removeEventListener("touchmove", handleTouchMove);
+        document.removeEventListener("touchend", handleTouchUp);
+        window.cancelAnimationFrame(requestId);
+
+      }, 500);
+    };
+
+    const scrollPageTouch = () => {
+      document.documentElement.scrollLeft -= scrollDelta;
+      document.body.scrollLeft -= scrollDelta;
+
+      if (scrollDelta > 0) {
+        scrollDelta -= 0.2;
+
+        if (scrollDelta < 0) scrollDelta = 0;
+        requestId = window.requestAnimationFrame(scrollPageTouch);
+      } else if (scrollDelta < 0) {
+        scrollDelta += 0.2;
+
+        if (scrollDelta > 0) scrollDelta = 0;
+        requestId = window.requestAnimationFrame(scrollPageTouch);
+      }
+    };
+
+  
+    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchend", handleTouchUp);
   };
 
   const scrollHorizontally = (e) => {
@@ -117,6 +162,7 @@ const HSC = () => {
 
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
+      contentRef.current.addEventListener("ontouchstart", touchScroll);
       document.addEventListener(scrollEvent, scrollHorizontally, {
         passive: false,
       });
@@ -125,6 +171,7 @@ const HSC = () => {
       });
     } else {
       contentRef.current.attachEvent("onmousedown", dragScroll);
+     contentRef.current.attachEvent("ontouchstart", touchScroll);
       document.attachEvent("on" + scrollEvent, scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
@@ -132,6 +179,7 @@ const HSC = () => {
     return () => {
       if (window.removeEventListener) {
         contentRef.current.removeEventListener("mousedown", dragScroll);
+       contentRef.current.removeEventListener("ontouchstart", touchScroll);
         document.removeEventListener(scrollEvent, scrollHorizontally, {
           passive: false,
         });
@@ -140,6 +188,7 @@ const HSC = () => {
         });
       } else {
         contentRef.current.detachEvent("onmousedown", dragScroll);
+       contentRef.current.detachEvent("ontouchstart", touchScroll);
         document.detachEvent("on" + scrollEvent, scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
