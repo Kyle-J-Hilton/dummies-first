@@ -149,9 +149,15 @@
   margin-top: 270px;
 }
 
-.arrow {
+.arrowR {
   width: 75px;
   height: 75px;
+  background-image: url("../pages/assets/images/arrowleft.png");
+}
+.arrowL {
+  width: 75px;
+  height: 75px;
+  background-image: url("../pages/assets/images/arrowright.png");
 }
 
 .description {
