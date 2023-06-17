@@ -31,20 +31,20 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:locale" content="en_US" />
-    	  <meta property="og:site_name" content='dummies lab' />
+    	  <meta property="og:site_name" content='Dummies Lab' />
     	  <meta property="og:type" content='website' />
-    	  
+    	  <meta property="og:description" content='Bout to go Dummy' />
     	  <meta property="og:image" content="/favicon.ico" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
         <link rel="apple-touch-icon" sizes="180x180" href="../public/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon.ico" />
-        <meta name="theme-color" content="#8EF9F3" />
+        <meta name="theme-color" content="#F7CE5B" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
         <meta name="twitter:title" content="Dummies Lab" />
-    
+        <meta name="twitter:description" content="Bout to go Dummy" />
         <meta name="twitter:image" content="/favicon.ico" />
 
 
