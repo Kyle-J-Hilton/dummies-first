@@ -82,8 +82,15 @@ const SectionThree = () => {
       });
     }
   });
-  let docWidth = window.innerHeight * 9.25;
+
+  const handleLeftArrowClick = () => {
+    window.scrollTo(0, 0);
+  }
   
+  const handleRightArrowClick = () => {
+  let docWidth = window.innerHeight * 9.25;
+    window.scrollTo(docWidth, 0);
+  }
 
   return (
     <div className={styles.sectionThree}>
@@ -93,14 +100,14 @@ const SectionThree = () => {
           className={styles.arrowL}
           
           alt="arrow left"
-          onClick={window.scrollTo(0, 0)}
+          onClick={handleLeftArrowClick}
         />
         <button
           ref={rightArrowRef}
           className={styles.arrowR}
           
           alt="arrow right"
-          onClick={window.scrollTo(docWidth, 0)}
+          onClick={handleRightArrowClick}
         />
       </div>
     </div>
