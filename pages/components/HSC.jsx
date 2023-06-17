@@ -103,6 +103,7 @@ const HSC = () => {
       };
 
       const handleTouchUp = () => {
+       e.preventDefault();
         setTimeout(() => {
           document.removeEventListener("touchmove", handleTouchMove);
           document.removeEventListener("touchend", handleTouchUp);
