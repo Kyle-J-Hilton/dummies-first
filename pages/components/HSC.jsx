@@ -5,6 +5,7 @@ import SectionTwo from "./SideScrollSections/SectionTwo";
 import SectionThree from "./SideScrollSections/SectionThree";
 import SectionFour from "./SideScrollSections/SectionFour";
 import SectionFive from "./SideScrollSections/SectionFive";
+import RippleLink from "./RippleLink";
 
 const HSC = () => {
   useEffect(() => {
@@ -37,7 +38,7 @@ const HSC = () => {
     const dragScrollSpeed = 0.5;
     let scrollDelta = 0;
     let requestId;
-    console.log(startX);
+    
 
     const handleMouseMove = (e) => {
       e.preventDefault();
@@ -192,13 +193,14 @@ const HSC = () => {
     };
   }, []);
 
+
   return (
     <div className={styles.container}>
       <div ref={contentRef} className={styles.horizontalScrollContainer}>
         <SectionOne className={styles.sections} />
         <SectionTwo className={styles.sections} />
         <SectionThree className={styles.sections} />
-        <a href="https://twitter.com/DummiesLab" className={styles.links}></a>
+        <RippleLink />
         <SectionFour className={styles.sections} />
         <SectionFive className={styles.sections} />
       </div>
@@ -207,4 +209,3 @@ const HSC = () => {
 };
 
 export default HSC;
-
