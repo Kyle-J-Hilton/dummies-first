@@ -97,7 +97,7 @@ const HSC = () => {
   const handleTouchEnd = () => {
     setTimeout(() => {
       window.cancelAnimationFrame(requestId);
-    }, 300);
+    }, 500);
   };
 
   const scrollPage = () => {
