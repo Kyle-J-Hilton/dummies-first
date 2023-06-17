@@ -13,7 +13,7 @@
   0% {
     transform: translateX(-8px);
   }
-  50% {
+  80% {
     transform: translateX(8px);
   }
   100% {
