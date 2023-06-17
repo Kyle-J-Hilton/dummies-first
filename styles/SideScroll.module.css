@@ -10,10 +10,10 @@
 }
 
 @keyframes jiggle {
-  0% {
+  33% {
     transform: translateX(-8px);
   }
-  80% {
+  67% {
     transform: translateX(8px);
   }
   100% {
