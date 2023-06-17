@@ -11,18 +11,18 @@
 
 @keyframes jiggle {
   0% {
-    transform: translateX(-5px);
+    transform: translateX(-4px);
   }
   50% {
-    transform: translateX(5px);
+    transform: translateX(4px);
   }
   100% {
-    transform: translateX(-5px);
+    transform: translateX(-4px);
   }
 }
 
 .jiggle {
-  animation: jiggle 0.5s infinite;
+  animation: jiggle 0.8s infinite;
 }
 
 .rippleBox {
