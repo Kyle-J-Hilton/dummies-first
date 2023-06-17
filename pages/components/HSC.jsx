@@ -13,7 +13,7 @@ const HSC = () => {
     let windowWidth = window.innerWidth;
     let scrollToPosition = docWidth / 2 - windowWidth / 2;
     window.scrollTo(scrollToPosition, 0);
-  }, []);
+  });
 
   const contentRef = useRef(null);
   let startX = 0;
@@ -29,7 +29,7 @@ const HSC = () => {
    setTimeout(() => {
       setIsLoading(false);
     }, 6200);
-  });
+  }, []);
 
 
   const dragScroll = (e) => {
