@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     animation-name: fadeOut;
-    animation-duration: 0.3s;
+    animation-duration: 0.6s;
     animation-delay: 4.5s;
     animation-fill-mode: forwards;
     pointer-events: none;
