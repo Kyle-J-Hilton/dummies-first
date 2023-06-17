@@ -25,6 +25,58 @@
   animation: jiggle 0.5s infinite;
 }
 
+.rippleBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 105px;
+  width: 105px;
+  margin: 50px 0;
+  left: 82vh;
+  top: 65vh;
+}
+
+.rippleBox:hover span {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid #22f7f4;
+  border-radius: 50%;
+  animation: animate 4s linear infinite;
+  animation-delay: calc(-0.3s * var(i));
+}
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: .7;
+  }
+  50% {
+    opacity: 0.2;
+    border: 1px solid #22f7f4;
+  }
+  100% {
+    width: 350px;
+    height: 350px;
+    border: 0.5px solid #22f7f4;
+    opacity: 0;
+  }
+}
+
+.shiny {
+  position:absolute;
+  
+  height: 105px;
+  width: 105px;
+  z-index: 4;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+
 
 .horizontalScrollContainer {
   background-image: url("../pages/assets/images/dummybackground.jpg");
@@ -155,4 +207,5 @@
   }
 
 }
+
 
