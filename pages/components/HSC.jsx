@@ -99,7 +99,7 @@ const HSC = () => {
         const x = e.touches ? e.touches[0].pageX : e.pageX;
         touchScrollDelta = ((x - touchStartX) * touchScrollSpeed) / 3;
         window.cancelAnimationFrame(requestTouchId);
-        requestId = window.requestAnimationFrame(scrollPageTouch);
+        requestTouchId = window.requestAnimationFrame(scrollPageTouch);
       };
 
       const handleTouchUp = () => {
