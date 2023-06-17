@@ -31,7 +31,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:locale" content="en_US" />
-    	  <meta property="og:site_name" content='Dummies Lab' />
+    	  
     	  <meta property="og:type" content='website' />
     	  <meta property="og:description" content='Bout to go Dummy' />
     	  <meta property="og:image" content="/favicon.ico" />
