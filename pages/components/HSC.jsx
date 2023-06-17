@@ -39,6 +39,7 @@ const HSC = () => {
     const dragScrollSpeed = 0.5;
     let scrollDelta = 0;
     let requestId;
+    console.log(startX);
 
     const handleMouseMove = (e) => {
       e.preventDefault();
