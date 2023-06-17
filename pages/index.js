@@ -43,9 +43,9 @@ const Home = () => {
         <meta name="theme-color" content="#ffffff" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
-        <meta name="twitter:title" content="@DummiesLab" />
-        <meta name="twitter:description" content="Bout to go DUMMY" />
-        <meta name="twitter:image" content="../public/favicon.ico" />
+        <meta name="twitter:title" content="Dummies Lab" />
+    
+        <meta name="twitter:image" content="/favicon.ico" />
 
 
         <script
