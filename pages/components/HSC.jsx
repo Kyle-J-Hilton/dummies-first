@@ -29,7 +29,7 @@ const HSC = () => {
    setTimeout(() => {
       setIsLoading(false);
     }, 6200);
-  }, []);
+  });
 
 
   const dragScroll = (e) => {
