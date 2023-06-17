@@ -80,7 +80,6 @@ const HSC = () => {
    
   }; 
 
- 
     
     let touchStartX = 0;
     let touchScrollDelta = 0;
@@ -91,48 +90,45 @@ const HSC = () => {
      touchStartX = e.touches[0].pageX;
      touchScrollDelta = 0;
      window.cancelAnimationFrame(requestTouchId);
-  
+    
+    }
 
-
-    const handleTouchMove = (e) => {
-      e.preventDefault();
-      const x = e.touches ? e.touches[0].pageX : e.pageX;
-      touchScrollDelta = ((x - touchStartX) * touchScrollSpeed) / 3;
-      window.cancelAnimationFrame(requestTouchId);
-      requestId = window.requestAnimationFrame(scrollPageTouch);
-     
-    };
-
-    const handleTouchUp = () => {
-      setTimeout(() => {
-        document.removeEventListener("touchmove", handleTouchMove);
-        document.removeEventListener("touchend", handleTouchUp);
+      const handleTouchMove = (e) => {
+        e.preventDefault();
+        const x = e.touches ? e.touches[0].pageX : e.pageX;
+        touchScrollDelta = ((x - touchStartX) * touchScrollSpeed) / 3;
         window.cancelAnimationFrame(requestTouchId);
+        requestId = window.requestAnimationFrame(scrollPageTouch);
+      };
 
-      }, 500);
-    };
+      const handleTouchUp = () => {
+        setTimeout(() => {
+          document.removeEventListener("touchmove", handleTouchMove);
+          document.removeEventListener("touchend", handleTouchUp);
+          window.cancelAnimationFrame(requestTouchId);
 
-    const scrollPageTouch = () => {
-      document.documentElement.scrollLeft -= touchScrollDelta;
-      document.body.scrollLeft -= touchScrollDelta;
+         }, 500);
+      };
 
-      if (touchScrollDelta > 0) {
-        touchScrollDelta -= 0.2;
+      const scrollPageTouch = () => {
+        document.documentElement.scrollLeft -= touchScrollDelta;
+        document.body.scrollLeft -= touchScrollDelta;
 
-        if (touchScrollDelta < 0) touchScrollDelta = 0;
-        requestTouchId = window.requestAnimationFrame(scrollPageTouch);
-      } else if (touchScrollDelta < 0) {
-        touchScrollDelta += 0.2;
+        if (touchScrollDelta > 0) {
+          touchScrollDelta -= 0.2;
 
-        if (touchScrollDelta > 0) touchScrollDelta = 0;
-        requestTouchId = window.requestAnimationFrame(scrollPageTouch);
-      }
-    };
+          if (touchScrollDelta < 0) touchScrollDelta = 0;
+            requestTouchId = window.requestAnimationFrame(scrollPageTouch);
+        } else if (touchScrollDelta < 0) {
+          touchScrollDelta += 0.2;
+
+          if (touchScrollDelta > 0) touchScrollDelta = 0;
+            requestTouchId = window.requestAnimationFrame(scrollPageTouch);
+          }
+     };
 
   
-    document.addEventListener("touchmove", handleTouchMove);
-    document.addEventListener("touchend", handleTouchUp);
-  };
+  
 
   const scrollHorizontally = (e) => {
     e.preventDefault();
@@ -169,6 +165,8 @@ const HSC = () => {
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
       contentRef.current.addEventListener("ontouchstart", handleTouchStart);
+      contentRef.current.addEventListener("touchmove", handleTouchMove);
+      contentRef.current.addEventListener("touchend", handleTouchUp);
       document.addEventListener(scrollEvent, scrollHorizontally, {
         passive: false,
       });
@@ -178,6 +176,8 @@ const HSC = () => {
     } else {
       contentRef.current.attachEvent("onmousedown", dragScroll);
      contentRef.current.attachEvent("ontouchstart", handleTouchStart);
+     contentRef.current.addEventListener("touchmove", handleTouchMove);
+      contentRef.current.addEventListener("touchend", handleTouchUp);
       document.attachEvent("on" + scrollEvent, scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
@@ -186,6 +186,8 @@ const HSC = () => {
       if (window.removeEventListener) {
         contentRef.current.removeEventListener("mousedown", dragScroll);
        contentRef.current.removeEventListener("ontouchstart", handleTouchStart);
+        contentRef.current.removeEventListener("touchmove", handleTouchMove);
+        contentRef.current.removeEventListener("touchend", handleTouchUp);
         document.removeEventListener(scrollEvent, scrollHorizontally, {
           passive: false,
         });
@@ -195,6 +197,8 @@ const HSC = () => {
       } else {
         contentRef.current.detachEvent("onmousedown", dragScroll);
        contentRef.current.detachEvent("ontouchstart", handleTouchStart);
+        contentRef.current.removeEventListener("touchmove", handleTouchMove);
+        contentRef.current.removeEventListener("touchend", handleTouchUp);
         document.detachEvent("on" + scrollEvent, scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
