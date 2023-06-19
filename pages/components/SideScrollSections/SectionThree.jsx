@@ -85,8 +85,8 @@ const SectionThree = () => {
 
   const handleLeftArrowClick = () => {
     window.scrollTo({
-      top: 0,
-      left: 0,
+      x: 0,
+      y: 0,
       behavior: "smooth",
     });
   }
@@ -94,8 +94,8 @@ const SectionThree = () => {
   const handleRightArrowClick = () => {
   let docWidth = window.innerHeight * 9.25;
     window.scrollTo({
-      top: 0,
-      left: docWidth,
+      x: docWidth,
+      y: 0,
       behavior: "smooth",
     });
   }
