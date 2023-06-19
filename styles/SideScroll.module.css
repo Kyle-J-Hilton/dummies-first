@@ -22,7 +22,7 @@
 }
 
 .jiggle {
-  animation: jiggle 1.2s infinite;
+  animation: jiggle 0.6s infinite;
 }
 
 .rippleBox {
