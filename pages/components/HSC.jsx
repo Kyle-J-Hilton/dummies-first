@@ -28,7 +28,7 @@ const HSC = () => {
     }, 5300);
    setTimeout(() => {
       setIsLoading(false);
-    }, 6500);
+    }, 5900);
   }, []);
 
 
