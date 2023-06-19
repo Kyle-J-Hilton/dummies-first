@@ -138,7 +138,7 @@ const HSC = () => {
   const calculateScrollSpeed = (e) => {
     const delta = e.wheelDelta || -e.detail;
     const velocity = Math.abs(delta / 3);
-    const minScrollSpeed = 2;
+    const minScrollSpeed = 6;
     const maxScrollSpeed = 20;
     const scrollSpeed =
       minScrollSpeed + (velocity / 100) * (maxScrollSpeed - minScrollSpeed);
