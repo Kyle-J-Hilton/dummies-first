@@ -35,7 +35,7 @@
     align-items: center;
     animation-name: liftUp;
     animation-duration: 0.9s;
-    animation-delay: 7.5s;
+    animation-delay: 7.3s;
     animation-fill-mode: forwards;
     pointer-events: none;
   }
