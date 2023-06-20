@@ -83,8 +83,8 @@ const HSC = () => {
   }; 
 
 
-  const [tStartX, setTStartX] = useState(e.touches[0].pageX);
-  const [tStartY, setTStartY] = useState(e.touches[0].pageY);
+  const [tStartX, setTStartX] = useState();
+  const [tStartY, setTStartY] = useState();
   
 const handleTouchStart = (e) => {
   setTStartX(e.touches[0].pageX);
