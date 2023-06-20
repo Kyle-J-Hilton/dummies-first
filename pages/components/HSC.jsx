@@ -100,34 +100,39 @@ const handleTouchMove = (e) => {
   const deltaX = tStartX - x;
   const deltaY = tStartY - y;
 
-  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
     // Horizontal scrolling
     scrollDelta = deltaX / 3;
   } else {
-    // Disable vertical scrolling
-    scrollDelta = 0;
+    // Vertical scrolling
+    scrollDelta = deltaY / 3;
   }
 
   window.cancelAnimationFrame(requestId);
-  requestId = window.requestAnimationFrame(scrollPage);
+  requestId = window.requestAnimationFrame(tScrollPage);
 };
 
 const handleTouchEnd = () => {
   setTimeout(() => {
     window.cancelAnimationFrame(requestId);
-  }, 500);
+  }, 100);
 };
 
-const scrollPage = () => {
+const tScrollPage = () => {
   document.documentElement.scrollLeft += scrollDelta;
   document.body.scrollLeft += scrollDelta;
 
-  if (Math.abs(scrollDelta) >= 0.2) {
-    scrollDelta *= 0.9;
-    requestId = window.requestAnimationFrame(scrollPage);
-  } else {
-    scrollDelta = 0;
-  }
+ if (scrollDelta > 0) {
+        scrollDelta -= 0.2;
+
+        if (scrollDelta < 0) scrollDelta = 0;
+        requestId = window.requestAnimationFrame(tScrollPage);
+      } else if (scrollDelta < 0) {
+        scrollDelta += 0.2;
+
+        if (scrollDelta > 0) scrollDelta = 0;
+        requestId = window.requestAnimationFrame(tScrollPage);
+      }
 };
 
   const scrollHorizontally = (e) => {
