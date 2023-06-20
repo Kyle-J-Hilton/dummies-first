@@ -42,8 +42,7 @@
 .loader .logofirst {
     width: 250px; 
     height: 250px;
-    display: flex;
-    position: absolute;
+    z-index: 1;
     animation-name: fadeOut;
     animation-duration: 0.2s;
     animation-delay: 2.0s;
@@ -53,7 +52,7 @@
 .loader .logo {
     width: 250px; 
     height: 250px;
-   
+    z-index: 9;
     animation-name: liftUp;
     animation-duration: 0.9s;
     animation-delay: 7.5s;
