@@ -169,9 +169,9 @@ const tScrollPage = () => {
 
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.addEventListener("touchstart", handleTouchStart, {passive: false});
-      contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: false});
-      contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: false});
+      contentRef.current.addEventListener("touchstart", handleTouchStart, {passive: true});
+      contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: true});
+      contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: true});
       
       document.addEventListener("mousewheel", scrollHorizontally, {
         passive: true,
@@ -192,9 +192,9 @@ const tScrollPage = () => {
     return () => {
       if (window.removeEventListener) {
          contentRef.current.removeEventListener("mousedown", dragScroll);
-         contentRef.current.removeEventListener("touchstart", handleTouchStart, {passive: false});
-         contentRef.current.removeEventListener("touchmove", handleTouchMove, {passive: false});
-         contentRef.current.removeEventListener("touchend", handleTouchEnd, {passive: false});
+         contentRef.current.removeEventListener("touchstart", handleTouchStart, {passive: true});
+         contentRef.current.removeEventListener("touchmove", handleTouchMove, {passive: true});
+         contentRef.current.removeEventListener("touchend", handleTouchEnd, {passive: true});
        
         document.removeEventListener("mousewheel", scrollHorizontally, {
           passive: true,
