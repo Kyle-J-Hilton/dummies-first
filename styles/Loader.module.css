@@ -4,10 +4,10 @@
 
   @keyframes liftUp {
     from {
-      height: 100%;
+      top: 0;
     }
     to {
-      height: 0%;
+      top: -100vh;
       
     }
   }
