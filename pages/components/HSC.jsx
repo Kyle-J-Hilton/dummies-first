@@ -113,9 +113,9 @@ const handleTouchMove = (e) => {
 };
 
 const handleTouchEnd = () => {
-  setTimeout(() => {
+  
     window.cancelAnimationFrame(requestId);
-  }, 100);
+ 
 };
 
 const tScrollPage = () => {
@@ -158,7 +158,7 @@ const tScrollPage = () => {
     const minScrollSpeed = 2;
     const maxScrollSpeed = 20;
     const scrollSpeed =
-      minScrollSpeed + (velocity / 50) * (maxScrollSpeed - minScrollSpeed);
+      minScrollSpeed + (velocity / 50) * (maxScrollSpeed);
     return scrollSpeed;
   };
 
@@ -173,16 +173,16 @@ const tScrollPage = () => {
       contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: true});
       
       document.addEventListener("mousewheel", scrollHorizontally, {
-        passive: false,
+        passive: true,
       });
       document.addEventListener(firefoxScrollEvent, scrollHorizontally, {
-        passive: false,
+        passive: true,
       });
     } else {
-      contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.addEventListener("touchstart", handleTouchStart, {passive: true});
-      contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: true});
-      contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: true});
+      document.attachEvent("mousedown", dragScroll);
+      document.attachEvent("touchstart", handleTouchStart);
+      document.attachEvent("touchmove", handleTouchMove);
+      document.attachEvent("touchend", handleTouchEnd);
      
       document.attachEvent("on" + "mousewheel", scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
@@ -191,21 +191,21 @@ const tScrollPage = () => {
     return () => {
       if (window.removeEventListener) {
          contentRef.current.removeEventListener("mousedown", dragScroll);
-         contentRef.current.removeEventListener("touchstart", handleTouchStart);
-         contentRef.current.removeEventListener("touchmove", handleTouchMove);
-         contentRef.current.removeEventListener("touchend", handleTouchEnd);
+         contentRef.current.removeEventListener("touchstart", handleTouchStart, {passive: true});
+         contentRef.current.removeEventListener("touchmove", handleTouchMove, {passive: true});
+         contentRef.current.removeEventListener("touchend", handleTouchEnd, {passive: true});
        
         document.removeEventListener("mousewheel", scrollHorizontally, {
-          passive: false,
+          passive: true,
         });
         document.removeEventListener(firefoxScrollEvent, scrollHorizontally, {
-          passive: false,
+          passive: true,
         });
       } else {
-         contentRef.current.removeEventListener("mousedown", dragScroll);
-         contentRef.current.removeEventListener("touchstart", handleTouchStart);
-         contentRef.current.removeEventListener("touchmove", handleTouchMove);
-         contentRef.current.removeEventListener("touchend", handleTouchEnd);
+         document.detachEvent("mousedown", dragScroll);
+         document.detachEvent("touchstart", handleTouchStart);
+         document.detachEvent("touchmove", handleTouchMove);
+         document.detachEvent("touchend", handleTouchEnd);
      
         document.detachEvent("on" + "mousewheel", scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
