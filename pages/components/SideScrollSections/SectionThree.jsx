@@ -84,8 +84,36 @@ const SectionThree = () => {
     }
   });
 */
- 
- 
+  const [arrowLeft, setArrowLeft] = useState(false);
+  const [arrowRight, setArrowRight] = useState(false);
+  
+  const handleLclick = () => {
+    setArrowLeft(true);
+  }
+  const handleRclick = () => {
+    setArrowRight(true);
+  }
+  
+ useEffect(() => {
+   let docWidth = window.innerHeight * 9.26;
+   if(arrowLeft){
+     window.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    })
+     setTimeout(() => {
+      setArrowLeft(false);
+    }, "100");
+   }
+   if(arrowRight){
+     window.scrollTo({
+      left: docWidth,
+      behavior: "smooth",
+    })
+     setTimeout(() => {
+      setArrowRight(false);
+    }, "100");
+ })
 
   return (
     <div className={styles.sectionThree}>
@@ -93,14 +121,14 @@ const SectionThree = () => {
         <div
           ref={leftArrowRef}
           className={styles.arrowL}
-          
+          onClick={handleLclick()}
           alt="arrow left"
           
         ></div>
         <div
           ref={rightArrowRef}
           className={styles.arrowR}
-          
+          onClick={handleRclick()}
           alt="arrow right"
           
        ></div>
