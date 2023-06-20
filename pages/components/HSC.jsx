@@ -8,12 +8,13 @@ import SectionFive from "./SideScrollSections/SectionFive";
 import RippleLink from "./RippleLink";
 
 const HSC = () => {
+  
   useEffect(() => {
     let docWidth = window.innerHeight * 9.26;
     let windowWidth = window.innerWidth;
     let scrollToPosition = docWidth / 2 - windowWidth / 2;
     window.scrollTo(scrollToPosition, 0);
-  }, []);
+  });
 
   const contentRef = useRef(null);
   let startX = 0;
