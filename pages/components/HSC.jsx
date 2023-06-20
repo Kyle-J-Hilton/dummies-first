@@ -114,6 +114,8 @@ const handleTouchMove = (e) => {
 
 const handleTouchEnd = () => {
   setTimeout(() => {
+    setTStartX(0);
+    setTStartY(0);
     window.cancelAnimationFrame(requestId);
   }, 100);
 };
