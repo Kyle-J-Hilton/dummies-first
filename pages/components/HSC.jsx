@@ -9,9 +9,6 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
   
-
-
-  
   useEffect(() => {
     let docWidth = window.innerHeight * 9.26;
     let windowWidth = window.innerWidth;
@@ -85,9 +82,13 @@ const HSC = () => {
    
   }; 
 
+
+  const [tStartX, setTStartX] = useState(0);
+  const [tStartY, setTStartY] = useState(0);
+  
 const handleTouchStart = (e) => {
-  startX = e.touches[0].pageX;
-  startY = e.touches[0].pageY;
+  setTStartX(e.touches[0].pageX);
+  setTStartY(e.touches[0].pageY);
   scrollDelta = 0;
   window.cancelAnimationFrame(requestId);
 };
@@ -96,8 +97,8 @@ const handleTouchMove = (e) => {
   e.preventDefault();
   const x = e.touches[0].pageX;
   const y = e.touches[0].pageY;
-  const deltaX = startX - x;
-  const deltaY = startY - y;
+  const deltaX = tStartX - x;
+  const deltaY = tStartY - y;
 
   if (Math.abs(deltaX) > Math.abs(deltaY)) {
     // Horizontal scrolling
@@ -128,9 +129,6 @@ const scrollPage = () => {
     scrollDelta = 0;
   }
 };
-
-
-
 
   const scrollHorizontally = (e) => {
     e.preventDefault();
