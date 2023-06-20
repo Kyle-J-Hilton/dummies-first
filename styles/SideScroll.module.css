@@ -5,6 +5,7 @@
 
 .container {
   min-height: 100vh;
+  width: 926vh;
   overflow: hidden;
   margin: 0;
   background-color: black;
