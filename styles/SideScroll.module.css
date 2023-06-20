@@ -199,7 +199,7 @@
 
 @media (max-width: 515px) {
   .horizontalScrollContainer {
-    background-image: url("../pages/assets/images/dummybackground.jpg");
+    background-image: url("../pages/assets/images/dummybackgroundmobile.jpg");
     background-size: cover;
     position: absolute;
     height: 90vh;
