@@ -103,7 +103,8 @@ const handleTouchMove = (e) => {
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
     // Horizontal scrolling
     scrollDelta = deltaX / 3;
-  } else {
+  } 
+  if (Math.abs(deltaX) < Math.abs(deltaY)){
     // Vertical scrolling
     scrollDelta = deltaY / 3;
   }
