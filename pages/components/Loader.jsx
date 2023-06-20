@@ -7,7 +7,8 @@ import Image from "next/image";
 function Loader() {
   return (
     <div className={styles.loader}>
-      <Image className={styles.logo} src={StillLogo} alt="loader" />
+      <Image className={styles.logofirst} src={StillLogo} priority alt="loader" />
+      <Image className={styles.logo} src={AnimatedLogo} alt="loader" />
     </div>
   );
 }
