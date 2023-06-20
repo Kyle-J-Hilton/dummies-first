@@ -85,6 +85,7 @@ const SectionThree = () => {
   });
 */
   const handleLeftArrowClick = () => {
+    console.log('left arrow clicked');
     window.scrollTo({
       x: 0,
       y: 0,
@@ -93,6 +94,7 @@ const SectionThree = () => {
   }
   
   const handleRightArrowClick = () => {
+    console.log('right arrow clicked');
   let docWidth = window.innerHeight * 9.25;
     window.scrollTo({
       x: docWidth,
@@ -109,14 +111,14 @@ const SectionThree = () => {
           className={styles.arrowL}
           
           alt="arrow left"
-          onClick={handleLeftArrowClick}
+          onClick={handleLeftArrowClick()}
         ></div>
         <div
           ref={rightArrowRef}
           className={styles.arrowR}
           
           alt="arrow right"
-          onClick={handleRightArrowClick}
+          onClick={handleRightArrowClick()}
        ></div>
       </div>
     </div>
