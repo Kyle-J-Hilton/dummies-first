@@ -6,6 +6,7 @@
 .container {
   height: 99vh;
   width: 924vh;
+  position: absolute;
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
