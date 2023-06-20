@@ -38,3 +38,11 @@
     animation-delay: 4.8s;
     animation-fill-mode: forwards;
 }
+@media (max-width: 515px) {
+   
+  
+.loader .logo {
+    width: 50vw; 
+    height: auto;
+}
+}
