@@ -100,7 +100,7 @@ const handleTouchMove = (e) => {
   const deltaX = tStartX - x;
   const deltaY = tStartY - y;
 
-   scrollDelta = ( deltaX + deltaY) / 3;
+   scrollDelta = deltaX  / 3;
 
   window.cancelAnimationFrame(requestId);
   requestId = window.requestAnimationFrame(tScrollPage);
@@ -162,7 +162,7 @@ const tScrollPage = () => {
 
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.addEventListener("touchstart", handleTouchStart, {passive: true});
+      contentRef.current.addEventListener("touchstart", handleTouchStart, {passive: false});
       contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: true});
       contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: true});
       
@@ -185,7 +185,7 @@ const tScrollPage = () => {
     return () => {
       if (window.removeEventListener) {
          contentRef.current.removeEventListener("mousedown", dragScroll);
-         contentRef.current.removeEventListener("touchstart", handleTouchStart, {passive: true});
+         contentRef.current.removeEventListener("touchstart", handleTouchStart, {passive: false});
          contentRef.current.removeEventListener("touchmove", handleTouchMove, {passive: true});
          contentRef.current.removeEventListener("touchend", handleTouchEnd, {passive: true});
        
