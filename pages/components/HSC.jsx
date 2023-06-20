@@ -134,7 +134,7 @@ const HSC = () => {
       requestId = window.requestAnimationFrame(scrollPage);
     }
   };
-    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
     document.addEventListener("touchend", handleTouchEnd);
   };
 
