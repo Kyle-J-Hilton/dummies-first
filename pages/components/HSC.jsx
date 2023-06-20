@@ -87,6 +87,7 @@ const HSC = () => {
 
   const handleTouchStart = (e) => {
     startX = e.touches[0].pageX;
+    startY = e.touches[0].pageY;
     scrollDelta = 0;
     window.cancelAnimationFrame(requestId);
   };
@@ -99,11 +100,11 @@ const HSC = () => {
     const deltaY = startY - y;
      if (Math.abs(deltaX) > Math.abs(deltaY)) {
     // Horizontal scrolling
-    scrollDelta = deltaX / 3;
-  } else {
+        scrollDelta = deltaX / 3;
+    } else {
     // Vertical scrolling
-    scrollDelta = deltaY / 3;
-  }
+      scrollDelta = deltaY / 3;
+    }
     window.cancelAnimationFrame(requestId);
     requestId = window.requestAnimationFrame(scrollPage);
   };
