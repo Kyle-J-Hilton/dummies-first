@@ -85,58 +85,54 @@ const HSC = () => {
    
   }; 
 
-  const handleTouchStart = (e) => {
-    startX = e.touches[0].pageX;
-    startY = e.touches[0].pageY;
-    scrollDelta = 0;
-    window.cancelAnimationFrame(requestId);
-  
+const handleTouchStart = (e) => {
+  startX = e.touches[0].pageX;
+  startY = e.touches[0].pageY;
+  scrollDelta = 0;
+  window.cancelAnimationFrame(requestId);
+};
 
-  const handleTouchMove = (e) => {
-    e.preventDefault();
-    const x = e.touches[0].pageX;
-    const y = e.touches[0].pageY;
-    const deltaX = startX - x;
-    const deltaY = startY - y;
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+const handleTouchMove = (e) => {
+  e.preventDefault();
+  const x = e.touches[0].pageX;
+  const y = e.touches[0].pageY;
+  const deltaX = startX - x;
+  const deltaY = startY - y;
+
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
     // Horizontal scrolling
     scrollDelta = deltaX / 3;
-    } else {
-    // Vertical scrolling
-    scrollDelta = deltaY / 3;
-    }
-  
+  } else {
+    // Disable vertical scrolling
+    scrollDelta = 0;
+  }
+
+  window.cancelAnimationFrame(requestId);
+  requestId = window.requestAnimationFrame(scrollPage);
+};
+
+const handleTouchEnd = () => {
+  setTimeout(() => {
     window.cancelAnimationFrame(requestId);
+  }, 500);
+};
+
+const scrollPage = () => {
+  document.documentElement.scrollLeft += scrollDelta;
+  document.body.scrollLeft += scrollDelta;
+
+  if (Math.abs(scrollDelta) >= 0.2) {
+    scrollDelta *= 0.9;
     requestId = window.requestAnimationFrame(scrollPage);
-  };
+  } else {
+    scrollDelta = 0;
+  }
+};
 
-  const handleTouchEnd = () => {
-    setTimeout(() => {
-        document.removeEventListener("touchmove", handleTouchMove);
-        document.removeEventListener("touchend", handleTouchEnd);
-      window.cancelAnimationFrame(requestId);
-    }, 500);
-  };
+document.addEventListener("touchstart", handleTouchStart);
+document.addEventListener("touchmove", handleTouchMove, { passive: false });
+document.addEventListener("touchend", handleTouchEnd);
 
-  const scrollPage = () => {
-    document.documentElement.scrollLeft += scrollDelta;
-    document.body.scrollLeft += scrollDelta;
-
-    if (scrollDelta > 0) {
-      scrollDelta -= 0.2;
-
-      if (scrollDelta < 0) scrollDelta = 0;
-      requestId = window.requestAnimationFrame(scrollPage);
-    } else if (scrollDelta < 0) {
-      scrollDelta += 0.2;
-
-      if (scrollDelta > 0) scrollDelta = 0;
-      requestId = window.requestAnimationFrame(scrollPage);
-    }
-  };
-    document.addEventListener("touchmove", handleTouchMove, { passive: false });
-    document.addEventListener("touchend", handleTouchEnd);
-  };
 
   const scrollHorizontally = (e) => {
     e.preventDefault();
