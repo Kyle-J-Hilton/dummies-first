@@ -87,12 +87,12 @@ const SectionThree = () => {
   const [leftArrowClicked, setLeftArrowClicked] = useState(false);
   const [rightArrowClicked, setRightArrowClicked] = useState(false);
 
-  const handleLeftArrowClick = (e) => {
-    e.preventDefault();
+  const handleLeftArrowClick = () => {
+    
     setLeftArrowClicked(true);
   }
-  const handleRightArrowClick = (e) => {
-    e.preventDefault();
+  const handleRightArrowClick = () => {
+    
     setRightArrowClicked(true)
    }
   
@@ -124,14 +124,14 @@ const SectionThree = () => {
           className={styles.arrowL}
           
           alt="arrow left"
-          onClick={handleLeftArrowClick(e)}
+          onClick={handleLeftArrowClick()}
         ></div>
         <div
           ref={rightArrowRef}
           className={styles.arrowR}
           
           alt="arrow right"
-          onClick={handleRightArrowClick(e)}
+          onClick={handleRightArrowClick()}
        ></div>
       </div>
     </div>
