@@ -205,6 +205,14 @@
     height: 90vh;
     width: 833.4vh;
   }
+  .container {
+  height: 91vh;
+  width: 834.4vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+  background-color: black;
+}
 
  .arrowR {
   width: 30px;
