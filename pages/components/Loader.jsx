@@ -1,6 +1,6 @@
 import React from "react";
 import AnimatedLogo from "../assets/images/loadinglogo.gif";
-import StillLogo from "../assets/images/loadinglogostill.png";
+import StillLogo from "../assets/images/loadinglogostill.jpg";
 import styles from "../../styles/Loader.module.css";
 import Image from "next/image";
 
