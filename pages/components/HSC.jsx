@@ -26,10 +26,10 @@ const HSC = () => {
     // Simulate loading completion after 2 seconds (replace this with your own loading logic)
     setTimeout(() => {
       setIsLoading(true);
-    }, 5200);
+    }, 8450);
    setTimeout(() => {
       setIsLoading(false);
-    }, 6000);
+    }, 9250);
   }, []);
 
 
