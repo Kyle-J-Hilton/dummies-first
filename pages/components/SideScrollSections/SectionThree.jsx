@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import styles from "../../../styles/SideScroll.module.css";
 
 //import { gsap } from "gsap/dist/gsap";
