@@ -9,14 +9,6 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
   
-// Detect chrome
-let chromeAgent = userAgentString.indexOf("Chrome") > -1;
-  
-// Detect Safari
-let safariAgent = userAgentString.indexOf("Safari") > -1;
-  
-// Discard Safari since it also matches Chrome
-if ((chromeAgent) && (safariAgent)) safariAgent = false;
 
 
   
