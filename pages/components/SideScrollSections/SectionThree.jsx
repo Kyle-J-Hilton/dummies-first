@@ -122,14 +122,14 @@ const SectionThree = () => {
         <div
           ref={leftArrowRef}
           className={styles.arrowL}
-          onClick={handleLclick()}
+          onClick={handleLclick}
           alt="arrow left"
           
         ></div>
         <div
           ref={rightArrowRef}
           className={styles.arrowR}
-          onClick={handleRclick()}
+          onClick={handleRclick}
           alt="arrow right"
           
        ></div>
