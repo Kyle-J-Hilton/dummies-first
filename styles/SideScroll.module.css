@@ -199,10 +199,9 @@
   .horizontalScrollContainer {
     background-image: url("../pages/assets/images/dummybackground.jpg");
     background-size: cover;
-    margin-bottom: 8vh;
     position: absolute;
-    height: 92vh;
-    width: 924vh;
+    height: 90vh;
+    width: 833.4vh;
   }
 
  .arrowR {
@@ -220,7 +219,7 @@
     display: flex;
     width: 100vw;
     justify-content: space-between;
-    margin-top: 30vh;
+    margin-top: 40vh;
   }
 
   .links {
