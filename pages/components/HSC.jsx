@@ -83,8 +83,8 @@ const HSC = () => {
   }; 
 
 
-  const [tStartX, setTStartX] = useState(0);
-  const [tStartY, setTStartY] = useState(0);
+  const [tStartX, setTStartX] = useState(null);
+  const [tStartY, setTStartY] = useState(null);
   
 const handleTouchStart = (e) => {
   setTStartX(e.touches[0].pageX);
@@ -114,8 +114,8 @@ const handleTouchMove = (e) => {
 
 const handleTouchEnd = () => {
   setTimeout(() => {
-    setTStartX(0);
-    setTStartY(0);
+    setTStartX(null);
+    setTStartY(null);
     window.cancelAnimationFrame(requestId);
   }, 100);
 };
