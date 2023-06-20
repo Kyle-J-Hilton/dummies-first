@@ -83,8 +83,8 @@ const HSC = () => {
   }; 
 
 
-  const [tStartX, setTStartX] = useState(null);
-  const [tStartY, setTStartY] = useState(null);
+  const [tStartX, setTStartX] = useState(e.touches[0].pageX);
+  const [tStartY, setTStartY] = useState(e.touches[0].pageY);
   
 const handleTouchStart = (e) => {
   setTStartX(e.touches[0].pageX);
@@ -114,8 +114,6 @@ const handleTouchMove = (e) => {
 
 const handleTouchEnd = () => {
   setTimeout(() => {
-    setTStartX(null);
-    setTStartY(null);
     window.cancelAnimationFrame(requestId);
   }, 100);
 };
@@ -160,7 +158,7 @@ const tScrollPage = () => {
     const minScrollSpeed = 6;
     const maxScrollSpeed = 20;
     const scrollSpeed =
-      minScrollSpeed + (velocity / 100) * (maxScrollSpeed - minScrollSpeed);
+      minScrollSpeed + (velocity / 75) * (maxScrollSpeed - minScrollSpeed);
     return scrollSpeed;
   };
 
