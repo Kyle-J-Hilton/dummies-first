@@ -113,7 +113,7 @@ const SectionThree = () => {
      setTimeout(() => {
       setArrowRight(false);
     }, "100");
- })
+ },[])
 
   return (
     <div className={styles.sectionThree}>
