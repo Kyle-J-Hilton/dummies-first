@@ -100,14 +100,7 @@ const handleTouchMove = (e) => {
   const deltaX = tStartX - x;
   const deltaY = tStartY - y;
 
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    // Horizontal scrolling
-    scrollDelta = deltaX / 3;
-  } 
-  if (Math.abs(deltaX) < Math.abs(deltaY)){
-    // Vertical scrolling
-    scrollDelta = deltaY / 3;
-  }
+   scrollDelta = ( deltaX + deltaY) / 3;
 
   window.cancelAnimationFrame(requestId);
   requestId = window.requestAnimationFrame(tScrollPage);
