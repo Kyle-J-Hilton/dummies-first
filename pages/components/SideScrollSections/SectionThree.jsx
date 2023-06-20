@@ -10,6 +10,7 @@ const SectionThree = () => {
   const leftArrowRef = useRef(null);
   const rightArrowRef = useRef(null);
 
+  /*
   useLayoutEffect(() => {
     const container = leftArrowRef.current;
     const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
@@ -82,7 +83,7 @@ const SectionThree = () => {
       });
     }
   });
-
+*/
   const handleLeftArrowClick = () => {
     window.scrollTo({
       x: 0,
