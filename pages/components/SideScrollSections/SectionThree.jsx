@@ -109,11 +109,12 @@ const SectionThree = () => {
      window.scrollTo({
       left: docWidth,
       behavior: "smooth",
-    })
+      })
      setTimeout(() => {
       setArrowRight(false);
     }, "100");
- },[])
+   }
+ });
 
   return (
     <div className={styles.sectionThree}>
