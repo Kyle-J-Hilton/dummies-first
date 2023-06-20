@@ -84,24 +84,37 @@ const SectionThree = () => {
     }
   });
 */
-  const handleLeftArrowClick = () => {
-    console.log('left arrow clicked');
-    window.scrollTo({
-      x: 0,
-      y: 0,
-      behavior: "smooth",
-    });
+  const [leftArrowClicked, setLeftArrowClicked] = useState(false);
+  const [rightArrowClicked, setRightArrowClicked] = useState(false);
+
+  const handleLeftArrowClick = (e) => {
+    e.preventDefault();
+    setLeftArrowClicked(true);
   }
+  const handleRightArrowClick = (e) => {
+    e.preventDefault();
+    setRightArrowClicked(true)
+   }
   
-  const handleRightArrowClick = () => {
-    console.log('right arrow clicked');
-  let docWidth = window.innerHeight * 9.25;
-    window.scrollTo({
+  useEffect(() => {
+    let docWidth = window.innerHeight * 9.25;
+    if(leftArrowClicked){
+       window.scrollTo({
+          x: 0,
+          y: 0,
+          behavior: "smooth",
+        });
+      setLeftArrowClicked(false);
+    }if(rightArrowClicked){
+      window.scrollTo({
       x: docWidth,
       y: 0,
       behavior: "smooth",
-    });
-  }
+      });
+      setRightArrowClicked(false)
+    }
+  });
+ 
 
   return (
     <div className={styles.sectionThree}>
