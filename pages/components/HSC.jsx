@@ -91,7 +91,7 @@ const handleTouchStart = (e) => {
   setTStartY(e.touches[0].pageY);
   tScrollDelta = 0;
   window.cancelAnimationFrame(requestId);
-};
+  };
 
 const handleTouchMove = (e) => {
   e.preventDefault();
