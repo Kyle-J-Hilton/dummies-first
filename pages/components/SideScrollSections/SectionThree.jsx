@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
 import styles from "../../../styles/SideScroll.module.css";
 
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+//import { gsap } from "gsap/dist/gsap";
+//import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+//gsap.registerPlugin(ScrollTrigger);
 
 const SectionThree = () => {
   const leftArrowRef = useRef(null);
