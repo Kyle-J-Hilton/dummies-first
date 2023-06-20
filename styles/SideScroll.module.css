@@ -197,9 +197,9 @@
   .horizontalScrollContainer {
     background-image: url("../pages/assets/images/dummybackground.jpg");
     background-size: cover;
-    margin: 0;
+    margin-bottom: 5vh;
     position: absolute;
-    height: 100vh;
+    height: 95vh;
     width: 924vh;
   }
 
