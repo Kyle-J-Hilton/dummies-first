@@ -89,7 +89,7 @@ const HSC = () => {
 const handleTouchStart = (e) => {
   setTStartX(e.touches[0].pageX);
   setTStartY(e.touches[0].pageY);
-  scrollDelta = 0;
+  tScrollDelta = 0;
   window.cancelAnimationFrame(requestId);
 };
 
@@ -100,7 +100,7 @@ const handleTouchMove = (e) => {
   const deltaX = tStartX - x;
   const deltaY = tStartY - y;
 
-   scrollDelta = deltaX  / 3;
+   tScrollDelta = deltaX  / 3;
 
   window.cancelAnimationFrame(requestId);
   requestId = window.requestAnimationFrame(tScrollPage);
@@ -113,18 +113,18 @@ const handleTouchEnd = () => {
 };
 
 const tScrollPage = () => {
-  document.documentElement.scrollLeft += scrollDelta;
-  document.body.scrollLeft += scrollDelta;
+  document.documentElement.scrollLeft += tScrollDelta;
+  document.body.scrollLeft += tScrollDelta;
 
- if (scrollDelta > 0) {
-        scrollDelta -= 0.2;
+ if (tScrollDelta > 0) {
+        tScrollDelta -= 0.2;
 
-        if (scrollDelta < 0) scrollDelta = 0;
+        if (tScrollDelta < 0) tScrollDelta = 0;
         requestId = window.requestAnimationFrame(tScrollPage);
-      } else if (scrollDelta < 0) {
-        scrollDelta += 0.2;
+      } else if (tScrollDelta < 0) {
+        tScrollDelta += 0.2;
 
-        if (scrollDelta > 0) scrollDelta = 0;
+        if (tScrollDelta > 0) tScrollDelta = 0;
         requestId = window.requestAnimationFrame(tScrollPage);
       }
 };
