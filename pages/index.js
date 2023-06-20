@@ -33,7 +33,7 @@ const Home = () => {
         <meta property="og:locale" content="en_US" />
     	  
     	  <meta property="og:type" content='website' />
-    	  <meta property="og:description" content='Bout to go Dummy' />
+    	  <meta property="og:description" content='Bout to go DUMMY' />
     	  <meta property="og:image" content="/favicon.ico" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
@@ -44,7 +44,7 @@ const Home = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
         <meta name="twitter:title" content="Dummies Lab" />
-        <meta name="twitter:description" content="Bout to go Dummy" />
+        <meta name="twitter:description" content="Bout to go DUMMY" />
         <meta name="twitter:image" content="/favicon.ico" />
 
 
