@@ -4,9 +4,9 @@
 }
 
 .container {
-  height: 97.5vh;
+  height: 97vh;
   width: 924vh;
-  position:  fixed;
+  
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 0;
