@@ -4,7 +4,7 @@
 }
 
 .container {
-  height: 98vh;
+  height: 97vh;
   width: 924vh;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -86,7 +86,7 @@
   background-size: cover;
   margin: 0;
   position: absolute;
-  height: 98vh;
+  height: 97vh;
   width: 924vh;
   overflow-x: hidden;
   overflow-y: hidden;
