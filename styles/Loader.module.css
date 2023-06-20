@@ -2,7 +2,7 @@
     transition-duration: 1s;
   }
 
-  @keyframes fadeOut {
+  @keyframes liftUp {
     from {
       height: 100%;
     }
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation-name: fadeOut;
+    animation-name: liftUp;
     animation-duration: 0.9s;
     animation-delay: 4.5s;
     animation-fill-mode: forwards;
