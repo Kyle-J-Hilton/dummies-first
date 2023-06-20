@@ -90,7 +90,7 @@ const HSC = () => {
     startY = e.touches[0].pageY;
     scrollDelta = 0;
     window.cancelAnimationFrame(requestId);
-  };
+  
 
   const handleTouchMove = (e) => {
     e.preventDefault();
@@ -98,8 +98,13 @@ const HSC = () => {
     const y = e.touches[0].pageY;
     const deltaX = startX - x;
     const deltaY = startY - y;
-    
-        scrollDelta = deltaX / 3;
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Horizontal scrolling
+    scrollDelta = deltaX / 3;
+    } else {
+    // Vertical scrolling
+    scrollDelta = deltaY / 3;
+    }
   
     window.cancelAnimationFrame(requestId);
     requestId = window.requestAnimationFrame(scrollPage);
@@ -107,6 +112,8 @@ const HSC = () => {
 
   const handleTouchEnd = () => {
     setTimeout(() => {
+        document.removeEventListener("touchmove", handleTouchMove);
+        document.removeEventListener("touchend", handleTouchEnd);
       window.cancelAnimationFrame(requestId);
     }, 500);
   };
@@ -126,6 +133,9 @@ const HSC = () => {
       if (scrollDelta > 0) scrollDelta = 0;
       requestId = window.requestAnimationFrame(scrollPage);
     }
+  };
+    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchend", handleTouchEnd);
   };
 
   const scrollHorizontally = (e) => {
@@ -163,8 +173,7 @@ const HSC = () => {
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
       contentRef.current.addEventListener("touchstart", handleTouchStart);
-      contentRef.current.addEventListener("touchmove", handleTouchMove);
-      contentRef.current.addEventListener("touchend", handleTouchEnd);
+      
       document.addEventListener(scrollEvent, scrollHorizontally, {
         passive: false,
       });
@@ -173,9 +182,8 @@ const HSC = () => {
       });
     } else {
       contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.attachEvent("ontouchstart", handleTouchStart);
-      contentRef.current.attachEvent("ontouchmove", handleTouchMove);
-      contentRef.current.attachEvent("ontouchend", handleTouchEnd);
+      contentRef.current.addEventListener("ontouchstart", handleTouchStart);
+     
       document.attachEvent("on" + scrollEvent, scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
@@ -184,8 +192,7 @@ const HSC = () => {
       if (window.removeEventListener) {
          contentRef.current.removeEventListener("mousedown", dragScroll);
         contentRef.current.removeEventListener("touchstart", handleTouchStart);
-        contentRef.current.removeEventListener("touchmove", handleTouchMove);
-        contentRef.current.removeEventListener("touchend", handleTouchEnd);
+       
         document.removeEventListener(scrollEvent, scrollHorizontally, {
           passive: false,
         });
@@ -194,9 +201,8 @@ const HSC = () => {
         });
       } else {
          contentRef.current.removeEventListener("mousedown", dragScroll);
-        contentRef.current.detachEvent("ontouchstart", handleTouchStart);
-        contentRef.current.detachEvent("ontouchmove", handleTouchMove);
-        contentRef.current.detachEvent("ontouchend", handleTouchEnd);
+        contentRef.current.removeEventListener("ontouchstart", handleTouchStart);
+     
         document.detachEvent("on" + scrollEvent, scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
