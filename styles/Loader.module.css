@@ -11,6 +11,23 @@
       
     }
   }
+  @keyframes fadeOut {
+      from {
+      display: flex;
+    }
+    to {
+      display: none;
+    }
+  }
+ @keyframes fadeIn {
+      from {
+      display: none;
+    }
+    to {
+      display: flex;
+    }
+  }
+
   
   .loader {
     position: fixed;
@@ -29,18 +46,34 @@
     animation-fill-mode: forwards;
     pointer-events: none;
   }
+.loader .logofirst {
+    width: 250px; 
+    height: 250px;
+    display: flex;
+    position: absolute;
+    animation-name: fadeOut;
+    animation-duration: 0.2s;
+    animation-delay: 2.0s;
+    animation-fill-mode: forwards;
+}
   
 .loader .logo {
     width: 250px; 
     height: 250px;
-    animation-name: fadeOut;
-    animation-duration: 0.6s;
-    animation-delay: 4.8s;
+    display: none;
+    position: absolute;
+    animation-name: fadeIn;
+    animation-duration: 0.2s;
+    animation-delay: 1.8s;
     animation-fill-mode: forwards;
 }
 @media (max-width: 515px) {
    
-  
+  .loader .logofirst {
+     width: 50vw; 
+    height: auto;
+    margin-bottom: 8vh;
+}
 .loader .logo {
     width: 50vw; 
     height: auto;
