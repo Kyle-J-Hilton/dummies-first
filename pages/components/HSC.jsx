@@ -163,8 +163,7 @@ const tScrollPage = () => {
   };
 
   useEffect(() => {
-    const isTouchDevice = "ontouchstart" in document.documentElement;
-    const scrollEvent = isTouchDevice ? "touchmove" : "mousewheel";
+   
     const firefoxScrollEvent = "DOMMouseScroll";
 
     if (window.addEventListener) {
@@ -173,7 +172,7 @@ const tScrollPage = () => {
       contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: true});
       contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: true});
       
-      document.addEventListener(scrollEvent, scrollHorizontally, {
+      document.addEventListener("mousewheel", scrollHorizontally, {
         passive: false,
       });
       document.addEventListener(firefoxScrollEvent, scrollHorizontally, {
@@ -185,7 +184,7 @@ const tScrollPage = () => {
       contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: true});
       contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: true});
      
-      document.attachEvent("on" + scrollEvent, scrollHorizontally);
+      document.attachEvent("on" + "mousewheel", scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
 
@@ -196,7 +195,7 @@ const tScrollPage = () => {
          contentRef.current.removeEventListener("touchmove", handleTouchMove);
          contentRef.current.removeEventListener("touchend", handleTouchEnd);
        
-        document.removeEventListener(scrollEvent, scrollHorizontally, {
+        document.removeEventListener("mousewheel", scrollHorizontally, {
           passive: false,
         });
         document.removeEventListener(firefoxScrollEvent, scrollHorizontally, {
@@ -208,7 +207,7 @@ const tScrollPage = () => {
          contentRef.current.removeEventListener("touchmove", handleTouchMove);
          contentRef.current.removeEventListener("touchend", handleTouchEnd);
      
-        document.detachEvent("on" + scrollEvent, scrollHorizontally);
+        document.detachEvent("on" + "mousewheel", scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
     };
