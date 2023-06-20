@@ -94,7 +94,16 @@ const HSC = () => {
   const handleTouchMove = (e) => {
     e.preventDefault();
     const x = e.touches[0].pageX;
-    scrollDelta = (startX - x) / 3;
+    const y = e.touches[0].pageY;
+    const deltaX = startX - x;
+    const deltaY = startY - y;
+     if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Horizontal scrolling
+    scrollDelta = deltaX / 3;
+  } else {
+    // Vertical scrolling
+    scrollDelta = deltaY / 3;
+  }
     window.cancelAnimationFrame(requestId);
     requestId = window.requestAnimationFrame(scrollPage);
   };
