@@ -2,6 +2,7 @@
 body {
     margin: 0;
     overflow-y: hidden; /* Hide vertical scrollbar */
+    background-color: black;
   }
 body::-webkit-scrollbar {
   display: none;
