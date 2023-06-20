@@ -108,12 +108,11 @@ const handleTouchMove = (e) => {
 
 const handleTouchEnd = () => {
   
-     setTimeout(() => {
-     
+  
       
         window.cancelAnimationFrame(requestId);
 
-      }, 300);
+
  
 };
 
