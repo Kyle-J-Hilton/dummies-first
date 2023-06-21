@@ -101,7 +101,7 @@ const HSC = () => {
   };
 
   const handleTouchMove = (e) => {
-    e.preventDefault();
+    
     const x = e.touches[0].pageX;
     const y = e.touches[0].pageY;
     const deltaX = startX - x;
@@ -170,10 +170,10 @@ const HSC = () => {
         passive: true,
       });
       contentRef.current.addEventListener("touchmove", handleTouchMove, {
-        passive: false,
+        passive: true,
       });
       contentRef.current.addEventListener("touchend", handleTouchEnd, {
-        passive: false,
+        passive: true,
       });
 
       document.addEventListener("mousewheel", scrollHorizontally, {
@@ -199,10 +199,10 @@ const HSC = () => {
           passive: true,
         });
         contentRef.current.removeEventListener("touchmove", handleTouchMove, {
-          passive: false,
+          passive: true,
         });
         contentRef.current.removeEventListener("touchend", handleTouchEnd, {
-          passive: false,
+         passive: true,
         });
 
         document.removeEventListener("mousewheel", scrollHorizontally, {
