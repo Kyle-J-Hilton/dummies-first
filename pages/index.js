@@ -36,6 +36,7 @@ const Home = () => {
     	  <meta property="og:description" content='Bout to go DUMMY' />
     	  <meta property="og:image" content="/dummiestarp.png" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
+       <meta name="og:title" content="Dummies Lab" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/dummiestarp.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
