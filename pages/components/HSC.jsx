@@ -45,7 +45,7 @@ const HSC = () => {
       } else if (isSafari()) {
         scrollToPosition = (docWidth / 2 - windowWidth / 2) + 30;
       } else if (isChrome()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 150;
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 250;
       } else if (isDiscordInAppBrowser()) {
         scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
       }
