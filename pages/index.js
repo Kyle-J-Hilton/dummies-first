@@ -34,10 +34,10 @@ const Home = () => {
     	  
     	  <meta property="og:type" content='website' />
     	  <meta property="og:description" content='Bout to go DUMMY' />
-    	  <meta property="og:image" content="/favicon.ico" />
+    	  <meta property="og:image" content="/dummiestarp.png" />
     	  <meta property="og:url" content='https://www.dummies-lab.com/' />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/dummiestarp.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
         <meta name="theme-color" content="#fb9516" />
@@ -45,7 +45,7 @@ const Home = () => {
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
         <meta name="twitter:title" content="Dummies Lab" />
         <meta name="twitter:description" content="Bout to go DUMMY" />
-        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="twitter:image" content="/dummiestarp.png" />
 
 
         <script
