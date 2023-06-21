@@ -15,7 +15,7 @@ const HSC = () => {
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 9.3;
+      docWidth = windowHeight * 9.35;
      
     } else {
       docWidth = window.innerHeight * 9.26;
