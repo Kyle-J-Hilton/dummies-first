@@ -28,6 +28,7 @@ const HSC = () => {
 
   const contentRef = useRef(null);
   let startX = 0;
+  let startY = 0;
   let scrollDelta = 0;
   let requestId;
   const [isLoading, setIsLoading] = useState(false);
@@ -87,12 +88,12 @@ const HSC = () => {
     document.addEventListener("mouseup", handleMouseUp);
   };
 
-  const [tStartX, setTStartX] = useState();
-  const [tStartY, setTStartY] = useState();
+
 
   const handleTouchStart = (e) => {
-    setTStartX(e.touches[0].pageX);
-    setTStartY(e.touches[0].pageY);
+    e.preventDefault();
+    startX = e.touches[0].pageX;
+    startY = e.touches[0].pageY;
     scrollDelta = 0;
     window.cancelAnimationFrame(requestId);
   };
@@ -101,8 +102,8 @@ const HSC = () => {
     e.preventDefault();
     const x = e.touches[0].pageX;
     const y = e.touches[0].pageY;
-    const deltaX = tStartX - x;
-    const deltaY = tStartY - y;
+    const deltaX = startX - x;
+    const deltaY = startY - y;
 
     scrollDelta = deltaX / 3;
 
