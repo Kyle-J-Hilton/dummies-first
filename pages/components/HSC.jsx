@@ -9,29 +9,7 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
 
-  // Helper function to detect Firefox browser
-   const isFirefox = () => {
-    return navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-  };
 
-  // Helper function to detect Safari browser
-  const isSafari = () => {
-    return (
-      /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
-      /^((?!chrome|android).)*applewebkit/i.test(navigator.userAgent)
-    );
-  };
-
-  // Helper function to detect Chrome browser
-  const isChrome = () => {
-        return /chrome/i.test(navigator.userAgent) && /mobile/i.test(navigator.userAgent);
-  };
-  
-
-  // Helper function to detect Discord's in-app browser
-  const isDiscordInAppBrowser = () => {
-    return /discord/i.test(navigator.userAgent);
-  };
   
   useEffect(() => {
     let docWidth;
@@ -40,16 +18,8 @@ const HSC = () => {
     let windowWidth = window.innerWidth;
     let scrollToPosition;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 6.1;
-      if (isFirefox()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
-      } else if (isSafari()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 950;
-      } else if (isChrome()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 350;
-      } else if (isDiscordInAppBrowser()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
-      }
+      docWidth = windowHeight * 9.3;
+    
     } else {
       docWidth = window.innerHeight * 9.26;
       scrollToPosition = docWidth / 2 - windowWidth / 2;
