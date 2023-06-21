@@ -15,8 +15,8 @@ const HSC = () => {
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 8.3;
-      console.log("mobile");
+      docWidth = windowHeight * 8.4;
+     
     } else {
       docWidth = window.innerHeight * 9.26;
     }
@@ -105,7 +105,7 @@ const HSC = () => {
     const deltaX = startX - x;
     const deltaY = startY - y;
 
-    scrollDelta = deltaX / 3;
+    scrollDelta = deltaX / 2;
 
     window.cancelAnimationFrame(requestId);
     requestId = window.requestAnimationFrame(tScrollPage);
