@@ -28,7 +28,7 @@ const Home = () => {
         <title>Dummies Lab</title>
         
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="/dummiestarp.png" />
+        <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:locale" content="en_US" />
     	  
