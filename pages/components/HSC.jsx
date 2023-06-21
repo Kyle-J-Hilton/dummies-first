@@ -22,7 +22,7 @@ const HSC = () => {
     }
 
     let scrollToPosition = docWidth / 2 - windowWidth / 2;
-    console.log(scrollToPosition);
+    
     window.scrollTo(scrollToPosition, 0);
   });
 
