@@ -41,13 +41,13 @@ const HSC = () => {
     if (windowWidth < windowHeightCheck) {
       docWidth = windowHeight * 9.3;
       if (isFirefox()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2);
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
       } else if (isSafari()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 20;
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 30;
       } else if (isChrome()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 100;
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 150;
       } else if (isDiscordInAppBrowser()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) - 150;
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
       }
     } else {
       docWidth = window.innerHeight * 9.26;
