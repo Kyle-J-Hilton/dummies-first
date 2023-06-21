@@ -9,14 +9,7 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
 
- const isMobileChrome = () => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    return (
-      /chrome/i.test(userAgent) &&
-      /mobile/i.test(userAgent) &&
-      !/crios/i.test(userAgent)
-    );
-  };
+ 
   
   useEffect(() => {
     let docWidth;
@@ -26,9 +19,7 @@ const HSC = () => {
     let scrollToPosition;
     if (windowWidth < windowHeightCheck) {
       docWidth = windowHeight * 9.3;
-        if(isMobileChrome){
-          docWidth += 300;
-        }
+      
     } else {
       docWidth = window.innerHeight * 9.26;
      
