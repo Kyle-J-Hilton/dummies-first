@@ -230,18 +230,11 @@
     margin-top: 40vh;
   }
   .rippleBox {
-      left: 72vh;
-      top: 59vh;
+      left: 73vh;
+      top: 58vh;
   }
 
-  .links {
-    position: absolute;
-    left: 72vh;
-    top: 59vh;
-    height: 95px;
-    width: 95px;
-    z-index: 9;
-  }
+
 }
 
 
