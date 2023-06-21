@@ -15,7 +15,7 @@ const HSC = () => {
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 9.26;
+      docWidth = windowHeight * 9.3;
      
     } else {
       docWidth = window.innerHeight * 9.26;
@@ -105,7 +105,7 @@ const HSC = () => {
     const deltaX = startX - x;
     const deltaY = startY - y;
 
-    scrollDelta = deltaX + deltaY / 2;
+    scrollDelta = (deltaX + deltaY) / 2;
 
     window.cancelAnimationFrame(requestId);
     requestId = window.requestAnimationFrame(tScrollPage);
