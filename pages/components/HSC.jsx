@@ -40,11 +40,11 @@ const HSC = () => {
     let windowWidth = window.innerWidth;
     let scrollToPosition;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 7.3;
+      docWidth = windowHeight * 6.5;
       if (isFirefox()) {
         scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
       } else if (isSafari()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 430;
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 630;
       } else if (isChrome()) {
         scrollToPosition = (docWidth / 2 - windowWidth / 2) + 350;
       } else if (isDiscordInAppBrowser()) {
