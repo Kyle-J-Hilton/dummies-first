@@ -214,11 +214,13 @@
     width: 30px;
     height: 30px;
     margin-right: 5vw;
+    z-index: 9;
   }
   .arrowL {
     width: 30px;
     height: 30px;
     margin-left: 5vw;
+    z-index: 9;
   }
 
   .scrollToExplore {
@@ -228,14 +230,14 @@
     margin-top: 40vh;
   }
   .rippleBox {
-      left: 79vh;
-      top: 62vh;
+      left: 69vh;
+      top: 60vh;
   }
 
   .links {
     position: absolute;
-    left: 537vh;
-    top: 73vh;
+    left: 69vh;
+    top: 60vh;
     height: 95px;
     width: 95px;
     z-index: 9;
