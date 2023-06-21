@@ -8,21 +8,51 @@ import SectionFive from "./SideScrollSections/SectionFive";
 import RippleLink from "./RippleLink";
 
 const HSC = () => {
+
+  // Helper function to detect Firefox browser
+   const isFirefox = () => {
+    return navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+  };
+
+  // Helper function to detect Safari browser
+  const isSafari = () => {
+    return (
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+      /^((?!chrome|android).)*applewebkit/i.test(navigator.userAgent)
+    );
+  };
+
+  // Helper function to detect Chrome browser
+  const isChrome = () => {
+    return /chrome/i.test(navigator.userAgent);
+  };
+
+  // Helper function to detect Discord's in-app browser
+  const isDiscordInAppBrowser = () => {
+    return /discord/i.test(navigator.userAgent);
+  };
   
   useEffect(() => {
     let docWidth;
     let windowHeightCheck = window.innerHeight / 1.5;
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
+    let scrollToPosition;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 9.35;
-     
+      docWidth = windowHeight * 9.3;
+      if (isFirefox()) {
+        scrollToPosition = (docWidth / 2 - windowWidth / 2);
+      } else if (isSafari()) {
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 20;
+      } else if (isChrome()) {
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 100;
+      } else if (isDiscordInAppBrowser()) {
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) - 150;
+      }
     } else {
       docWidth = window.innerHeight * 9.26;
+      scrollToPosition = docWidth / 2 - windowWidth / 2;
     }
-
-    let scrollToPosition = docWidth / 2 - windowWidth / 2;
-    
     window.scrollTo(scrollToPosition, 0);
   });
 
