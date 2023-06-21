@@ -15,7 +15,7 @@ const HSC = () => {
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
     if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 8.4;
+      docWidth = windowHeight * 8.7;
      
     } else {
       docWidth = window.innerHeight * 9.26;
@@ -91,7 +91,7 @@ const HSC = () => {
 
 
   const handleTouchStart = (e) => {
-    e.preventDefault();
+   
     startX = e.touches[0].pageX;
     startY = e.touches[0].pageY;
     scrollDelta = 0;
@@ -165,7 +165,7 @@ const HSC = () => {
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
       contentRef.current.addEventListener("touchstart", handleTouchStart, {
-        passive: false,
+        passive: true,
       });
       contentRef.current.addEventListener("touchmove", handleTouchMove, {
         passive: false,
@@ -194,7 +194,7 @@ const HSC = () => {
       if (window.removeEventListener) {
         contentRef.current.removeEventListener("mousedown", dragScroll);
         contentRef.current.removeEventListener("touchstart", handleTouchStart, {
-          passive: false,
+          passive: true,
         });
         contentRef.current.removeEventListener("touchmove", handleTouchMove, {
           passive: false,
