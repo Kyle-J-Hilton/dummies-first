@@ -22,8 +22,9 @@ const HSC = () => {
     
     } else {
       docWidth = window.innerHeight * 9.26;
-      scrollToPosition = docWidth / 2 - windowWidth / 2;
+     
     }
+     scrollToPosition = docWidth / 2 - windowWidth / 2;
     window.scrollTo(scrollToPosition, 0);
   });
 
