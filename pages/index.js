@@ -46,7 +46,7 @@ const Home = () => {
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
         <meta name="twitter:title" content="Dummies Lab" />
         <meta name="twitter:description" content="Bout to go DUMMY" />
-        <meta name="twitter:image" content="/dummiestarp.png" />
+        <meta name="twitter:image" content="https://dummies-6yv4.vercel.app/dummiestarp.png" />
 
 
         <script
