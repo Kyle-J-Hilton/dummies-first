@@ -24,8 +24,9 @@ const HSC = () => {
 
   // Helper function to detect Chrome browser
   const isChrome = () => {
-    return /chrome/i.test(navigator.userAgent);
+        return /chrome/i.test(navigator.userAgent) && /mobile/i.test(navigator.userAgent);
   };
+  
 
   // Helper function to detect Discord's in-app browser
   const isDiscordInAppBrowser = () => {
@@ -43,7 +44,7 @@ const HSC = () => {
       if (isFirefox()) {
         scrollToPosition = (docWidth / 2 - windowWidth / 2) - 250;
       } else if (isSafari()) {
-        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 330;
+        scrollToPosition = (docWidth / 2 - windowWidth / 2) + 30;
       } else if (isChrome()) {
         scrollToPosition = (docWidth / 2 - windowWidth / 2) + 350;
       } else if (isDiscordInAppBrowser()) {
