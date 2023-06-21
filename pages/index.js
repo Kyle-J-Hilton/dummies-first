@@ -13,11 +13,11 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Dummies Lab",
-    "url": "https://www.dummies-lab.com/",
+    "url": "https://dummies-6yv4.vercel.app/",
     "description": "Explore the world of NFTs with Dummies Lab. Discover unique and limited-edition artworks.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://www.dummies-lab.com/search?q={search_term_string}",
+      "target": "https://dummies-6yv4.vercel.app/search?q={dummieslab}",
       "query-input": "required name=search_term_string"
     }
   };
