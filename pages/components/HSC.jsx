@@ -101,7 +101,7 @@ const HSC = () => {
   };
 
   const handleTouchMove = (e) => {
-    
+    e.preventDefault();
     const x = e.touches[0].pageX;
     const y = e.touches[0].pageY;
     const deltaX = startX - x;
@@ -170,7 +170,7 @@ const HSC = () => {
         passive: true,
       });
       contentRef.current.addEventListener("touchmove", handleTouchMove, {
-        passive: true,
+        passive: false,
       });
       contentRef.current.addEventListener("touchend", handleTouchEnd, {
         passive: true,
