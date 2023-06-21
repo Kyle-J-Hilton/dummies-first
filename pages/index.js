@@ -39,8 +39,8 @@ const Home = () => {
        <meta name="og:title" content="Dummies Lab" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/dummiestarp.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/dummiestarp.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/dummiestarp.png" />
         <meta name="theme-color" content="#fb9516" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://twitter.com/DummiesLab" />
