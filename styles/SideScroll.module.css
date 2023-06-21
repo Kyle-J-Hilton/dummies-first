@@ -15,13 +15,13 @@
 
 @keyframes jiggle {
   37% {
-    transform: translateX(-0.5px);
+    transform: translateX(-1px);
   }
   64% {
-    transform: translateX(1px);
+    transform: translateX(2px);
   }
   100% {
-    transform: translateX(-0.5px);
+    transform: translateX(-1px);
   }
 }
 
@@ -230,13 +230,13 @@
     margin-top: 40vh;
   }
   .rippleBox {
-      left: 71vh;
+      left: 72vh;
       top: 59vh;
   }
 
   .links {
     position: absolute;
-    left: 71vh;
+    left: 72vh;
     top: 59vh;
     height: 95px;
     width: 95px;
