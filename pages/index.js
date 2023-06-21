@@ -18,7 +18,7 @@ const Home = () => {
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://dummies-6yv4.vercel.app/search?q={dummieslab}",
-      "query-input": "required name=search_term_string"
+      "query-input": "required name=dummieslab"
     }
   };
 
