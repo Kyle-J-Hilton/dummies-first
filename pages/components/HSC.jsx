@@ -8,11 +8,20 @@ import SectionFive from "./SideScrollSections/SectionFive";
 import RippleLink from "./RippleLink";
 
 const HSC = () => {
-  
   useEffect(() => {
-    let docWidth = window.innerHeight * 9.26;
+    let docWidth;
+    let windowHeightCheck = window.innerHeight / 1.5;
+    let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
+    if (windowWidth < windowHeightCheck) {
+      docWidth = windowHeight * 8.3;
+      console.log("mobile");
+    } else {
+      docWidth = window.innerHeight * 9.26;
+    }
+
     let scrollToPosition = docWidth / 2 - windowWidth / 2;
+    console.log(scrollToPosition);
     window.scrollTo(scrollToPosition, 0);
   });
 
@@ -27,11 +36,10 @@ const HSC = () => {
     setTimeout(() => {
       setIsLoading(true);
     }, 8200);
-   setTimeout(() => {
+    setTimeout(() => {
       setIsLoading(false);
-    }, 8500);
+    }, 8400);
   }, []);
-
 
   const dragScroll = (e) => {
     e.preventDefault();
@@ -39,7 +47,6 @@ const HSC = () => {
     const dragScrollSpeed = 0.5;
     let scrollDelta = 0;
     let requestId;
-    
 
     const handleMouseMove = (e) => {
       e.preventDefault();
@@ -47,16 +54,14 @@ const HSC = () => {
       scrollDelta = ((x - startX) * dragScrollSpeed) / 3;
       window.cancelAnimationFrame(requestId);
       requestId = window.requestAnimationFrame(scrollPage);
-     
     };
 
     const handleMouseUp = () => {
       setTimeout(() => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
-      
-        window.cancelAnimationFrame(requestId);
 
+        window.cancelAnimationFrame(requestId);
       }, 300);
     };
 
@@ -79,62 +84,53 @@ const HSC = () => {
 
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
-   
-  }; 
-
+  };
 
   const [tStartX, setTStartX] = useState();
   const [tStartY, setTStartY] = useState();
-  
-const handleTouchStart = (e) => {
-  setTStartX(e.touches[0].pageX);
-  setTStartY(e.touches[0].pageY);
-  tScrollDelta = 0;
-  window.cancelAnimationFrame(requestId);
+
+  const handleTouchStart = (e) => {
+    setTStartX(e.touches[0].pageX);
+    setTStartY(e.touches[0].pageY);
+    scrollDelta = 0;
+    window.cancelAnimationFrame(requestId);
   };
 
-const handleTouchMove = (e) => {
-  e.preventDefault();
-  const x = e.touches[0].pageX;
-  const y = e.touches[0].pageY;
-  const deltaX = tStartX - x;
-  const deltaY = tStartY - y;
+  const handleTouchMove = (e) => {
+    e.preventDefault();
+    const x = e.touches[0].pageX;
+    const y = e.touches[0].pageY;
+    const deltaX = tStartX - x;
+    const deltaY = tStartY - y;
 
-   tScrollDelta = deltaX  / 3;
+    scrollDelta = deltaX / 3;
 
-  window.cancelAnimationFrame(requestId);
-  requestId = window.requestAnimationFrame(tScrollPage);
-};
+    window.cancelAnimationFrame(requestId);
+    requestId = window.requestAnimationFrame(tScrollPage);
+  };
 
-const handleTouchEnd = () => {
-  
-  
-      
-        window.cancelAnimationFrame(requestId);
+  const handleTouchEnd = () => {
+    window.cancelAnimationFrame(requestId);
+  };
 
+  const tScrollPage = () => {
+    document.documentElement.scrollLeft += scrollDelta;
+    document.body.scrollLeft += scrollDelta;
 
- 
-};
+    if (scrollDelta > 0) {
+      scrollDelta -= 0.2;
 
-const tScrollPage = () => {
-  document.documentElement.scrollLeft += tScrollDelta;
-  document.body.scrollLeft += tScrollDelta;
+      if (scrollDelta < 0) scrollDelta = 0;
+      requestId = window.requestAnimationFrame(tScrollPage);
+    } else if (scrollDelta < 0) {
+      scrollDelta += 0.2;
 
- if (tScrollDelta > 0) {
-        tScrollDelta -= 0.2;
-
-        if (tScrollDelta < 0) tScrollDelta = 0;
-        requestId = window.requestAnimationFrame(tScrollPage);
-      } else if (tScrollDelta < 0) {
-        tScrollDelta += 0.2;
-
-        if (tScrollDelta > 0) tScrollDelta = 0;
-        requestId = window.requestAnimationFrame(tScrollPage);
-      }
-};
+      if (scrollDelta > 0) scrollDelta = 0;
+      requestId = window.requestAnimationFrame(tScrollPage);
+    }
+  };
 
   const scrollHorizontally = (e) => {
-    e.preventDefault();
     e = window.event || e;
     const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
     const scrollSpeed = calculateScrollSpeed(e);
@@ -155,21 +151,25 @@ const tScrollPage = () => {
     const velocity = Math.abs(delta / 3);
     const minScrollSpeed = 2;
     const maxScrollSpeed = 20;
-    const scrollSpeed =
-      minScrollSpeed + (velocity / 50) * (maxScrollSpeed);
+    const scrollSpeed = minScrollSpeed + (velocity / 50) * maxScrollSpeed;
     return scrollSpeed;
   };
 
   useEffect(() => {
-   
     const firefoxScrollEvent = "DOMMouseScroll";
 
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
-      contentRef.current.addEventListener("touchstart", handleTouchStart, {passive: false});
-      contentRef.current.addEventListener("touchmove", handleTouchMove, {passive: false});
-      contentRef.current.addEventListener("touchend", handleTouchEnd, {passive: false});
-      
+      contentRef.current.addEventListener("touchstart", handleTouchStart, {
+        passive: false,
+      });
+      contentRef.current.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
+      contentRef.current.addEventListener("touchend", handleTouchEnd, {
+        passive: false,
+      });
+
       document.addEventListener("mousewheel", scrollHorizontally, {
         passive: true,
       });
@@ -181,18 +181,24 @@ const tScrollPage = () => {
       document.attachEvent("touchstart", handleTouchStart);
       document.attachEvent("touchmove", handleTouchMove);
       document.attachEvent("touchend", handleTouchEnd);
-     
+
       document.attachEvent("on" + "mousewheel", scrollHorizontally);
       document.attachEvent("on" + firefoxScrollEvent, scrollHorizontally);
     }
 
     return () => {
       if (window.removeEventListener) {
-         contentRef.current.removeEventListener("mousedown", dragScroll);
-         contentRef.current.removeEventListener("touchstart", handleTouchStart, {passive: false});
-         contentRef.current.removeEventListener("touchmove", handleTouchMove, {passive: false});
-         contentRef.current.removeEventListener("touchend", handleTouchEnd, {passive: false});
-       
+        contentRef.current.removeEventListener("mousedown", dragScroll);
+        contentRef.current.removeEventListener("touchstart", handleTouchStart, {
+          passive: false,
+        });
+        contentRef.current.removeEventListener("touchmove", handleTouchMove, {
+          passive: false,
+        });
+        contentRef.current.removeEventListener("touchend", handleTouchEnd, {
+          passive: false,
+        });
+
         document.removeEventListener("mousewheel", scrollHorizontally, {
           passive: true,
         });
@@ -200,21 +206,26 @@ const tScrollPage = () => {
           passive: true,
         });
       } else {
-         document.detachEvent("mousedown", dragScroll);
-         document.detachEvent("touchstart", handleTouchStart);
-         document.detachEvent("touchmove", handleTouchMove);
-         document.detachEvent("touchend", handleTouchEnd);
-     
+        document.detachEvent("mousedown", dragScroll);
+        document.detachEvent("touchstart", handleTouchStart);
+        document.detachEvent("touchmove", handleTouchMove);
+        document.detachEvent("touchend", handleTouchEnd);
+
         document.detachEvent("on" + "mousewheel", scrollHorizontally);
         document.detachEvent("on" + firefoxScrollEvent, scrollHorizontally);
       }
     };
   }, []);
 
-
   return (
     <div className={styles.container}>
-      <div ref={contentRef} className={styles.horizontalScrollContainer + (isLoading ? ` ${styles.jiggle}` : "")}>
+      <div
+        ref={contentRef}
+        className={
+          styles.horizontalScrollContainer +
+          (isLoading ? ` ${styles.jiggle}` : "")
+        }
+      >
         <SectionOne className={styles.sections} />
         <SectionTwo className={styles.sections} />
         <SectionThree className={styles.sections} />
@@ -227,3 +238,4 @@ const tScrollPage = () => {
 };
 
 export default HSC;
+
