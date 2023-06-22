@@ -11,22 +11,11 @@ const HSC = () => {
 
 
   
-  useEffect(() => {
-    let docWidth;
-    let windowHeightCheck = window.innerHeight / 1.5;
-    let windowHeight = window.innerHeight;
-    let windowWidth = window.innerWidth;
-    let scrollToPosition;
-    if (windowWidth < windowHeightCheck) {
-      docWidth = windowHeight * 9.3;
-      
-    } else {
-      docWidth = window.innerHeight * 9.26;
-     
-    }
-     scrollToPosition = docWidth / 2 - windowWidth / 2;
-    window.scrollTo(scrollToPosition, 0);
-  });
+   const scrollToCenter = () => {
+      const containerWidth = container.offsetWidth;
+      const scrollPosition = container.scrollWidth / 2 - containerWidth / 2;
+      container.scrollTo(scrollPosition, 0);
+    };
 
   const contentRef = useRef(null);
   let startX = 0;
