@@ -132,12 +132,12 @@ const HSC = () => {
       scrollDelta -= 0.2;
 
       if (scrollDelta < 0) scrollDelta = 0;
-      requestId = window.requestAnimationFrame(tScrollPage);
+      requestId = window.cancelAnimationFrame(tScrollPage);
     } else if (scrollDelta < 0) {
       scrollDelta += 0.2;
 
       if (scrollDelta > 0) scrollDelta = 0;
-      requestId = window.requestAnimationFrame(tScrollPage);
+      requestId = window.cancelAnimationFrame(tScrollPage);
     }
   };
 
