@@ -9,13 +9,16 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
 
-
+ const contentRef = useRef(null);
   
   useEffect(() => {
     let docWidth;
+    const container = contentRef.current;
+
     let windowHeightCheck = window.innerHeight / 1.5;
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
+    const containerWidth = container.offsetWidth;
     let scrollToPosition;
     if (windowWidth < windowHeightCheck) {
       docWidth = windowHeight * 9.3;
@@ -24,11 +27,11 @@ const HSC = () => {
       docWidth = window.innerHeight * 9.26;
      
     }
-     scrollToPosition = docWidth / 2 - windowWidth / 2;
+     scrollToPosition = containerWidth / 2 - windowWidth / 2;
     window.scrollTo(scrollToPosition, 0);
   });
 
-  const contentRef = useRef(null);
+ 
   let startX = 0;
   let startY = 0;
   let scrollDelta = 0;
