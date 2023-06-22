@@ -9,15 +9,19 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
 
-
+ const contentRef = useRef(null);
   
+   useEffect(() => {
+    const container = contentRef.current;
+
    const scrollToCenter = () => {
       const containerWidth = container.offsetWidth;
       const scrollPosition = container.scrollWidth / 2 - containerWidth / 2;
       container.scrollTo(scrollPosition, 0);
     };
+      }, );
 
-  const contentRef = useRef(null);
+ 
   let startX = 0;
   let startY = 0;
   let scrollDelta = 0;
