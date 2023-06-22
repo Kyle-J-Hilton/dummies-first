@@ -100,24 +100,23 @@ const HSC = () => {
     window.cancelAnimationFrame(requestId);
   };
 
-  const handleTouchMove = (e) => {
-    e.preventDefault();
-    const x = e.touches[0].pageX;
-    const y = e.touches[0].pageY;
-    const deltaX = startX - x;
-    const deltaY = startY - y;
+ const handleTouchMove = (e) => {
+  e.preventDefault();
+  const touch = e.touches[0];
+  const x = touch.pageX;
+  const y = touch.pageY;
+  const deltaX = startX - x;
+  const deltaY = startY - y;
 
-    scrollDelta = (deltaX + deltaY) / 2;
+  scrollDelta = (deltaX + deltaY) / 2;
 
-    window.cancelAnimationFrame(requestId);
-    requestId = window.requestAnimationFrame(tScrollPage);
-  };
-
-  const handleTouchEnd = () => {
-     setTimeout(() => {
-    window.cancelAnimationFrame(requestId);
-       }, 300);
-  };
+  window.cancelAnimationFrame(requestId);
+  requestId = window.requestAnimationFrame(tScrollPage);
+};
+  
+const handleTouchEnd = () => {
+  window.cancelAnimationFrame(requestId);
+};
 
   const tScrollPage = () => {
     document.documentElement.scrollLeft += scrollDelta;
@@ -175,7 +174,9 @@ const HSC = () => {
       contentRef.current.addEventListener("touchend", handleTouchEnd, {
         passive: true,
       });
-
+      contentRef.current.addEventListener("touchcancel", handleTouchEnd, {
+        passive: true,
+      });
       document.addEventListener("mousewheel", scrollHorizontally, {
         passive: true,
       });
