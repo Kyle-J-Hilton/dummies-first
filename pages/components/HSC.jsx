@@ -173,7 +173,7 @@ const HSC = () => {
         passive: false,
       });
       contentRef.current.addEventListener("touchend", handleTouchEnd, {
-        passive: true,
+        passive: false,
       });
 
       document.addEventListener("mousewheel", scrollHorizontally, {
@@ -202,7 +202,7 @@ const HSC = () => {
           passive: false,
         });
         contentRef.current.removeEventListener("touchend", handleTouchEnd, {
-         passive: true,
+         passive: false,
         });
 
         document.removeEventListener("mousewheel", scrollHorizontally, {
