@@ -114,9 +114,9 @@ const HSC = () => {
   };
 
   const handleTouchEnd = () => {
-     setTimeout(() => {
+    
     window.cancelAnimationFrame(requestId);
-       }, 300);
+  
   };
 
   const tScrollPage = () => {
