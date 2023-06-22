@@ -132,15 +132,14 @@ const HSC = () => {
       scrollDelta -= 0.2;
 
       if (scrollDelta < 0) scrollDelta = 0;
-      requestId = window.cancelAnimationFrame(tScrollPage);
+      requestId = window.requestAnimationFrame(tScrollPage);
     } else if (scrollDelta < 0) {
       scrollDelta += 0.2;
 
       if (scrollDelta > 0) scrollDelta = 0;
-      requestId = window.cancelAnimationFrame(tScrollPage);
+      requestId = window.requestAnimationFrame(tScrollPage);
     }
   };
-
 
   const scrollHorizontally = (e) => {
     e = window.event || e;
