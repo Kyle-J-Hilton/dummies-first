@@ -131,10 +131,9 @@ const HSC = () => {
     if (Math.abs(scrollDelta) >= 0.2) {
     scrollDelta *= 0.9;
     requestId = window.requestAnimationFrame(scrollPage);
-  } else {
+    } else {
     scrollDelta = 0;
-  }
-};
+    }
 
   };
 
