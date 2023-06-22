@@ -169,13 +169,13 @@ const HSC = () => {
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
       contentRef.current.addEventListener("touchstart", handleTouchStart, {
-        passive: false,
+        passive: true,
       });
       contentRef.current.addEventListener("touchmove", handleTouchMove, {
         passive: false,
       });
       contentRef.current.addEventListener("touchend", handleTouchEnd, {
-        passive: false,
+        passive: true,
       });
 
       document.addEventListener("mousewheel", scrollHorizontally, {
@@ -187,7 +187,9 @@ const HSC = () => {
     } else {
       document.attachEvent("mousedown", dragScroll);
       document.attachEvent("touchstart", handleTouchStart);
-      document.attachEvent("touchmove", handleTouchMove);
+      contentRef.current.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
       document.attachEvent("touchend", handleTouchEnd);
 
       document.attachEvent("on" + "mousewheel", scrollHorizontally);
@@ -204,7 +206,7 @@ const HSC = () => {
           passive: false,
         });
         contentRef.current.removeEventListener("touchend", handleTouchEnd, {
-         passive: false,
+         passive: true,
         });
 
         document.removeEventListener("mousewheel", scrollHorizontally, {
@@ -216,7 +218,9 @@ const HSC = () => {
       } else {
         document.detachEvent("mousedown", dragScroll);
         document.detachEvent("touchstart", handleTouchStart);
-        document.detachEvent("touchmove", handleTouchMove);
+         contentRef.current.removeEventListener("touchmove", handleTouchMove, {
+          passive: false,
+        });
         document.detachEvent("touchend", handleTouchEnd);
 
         document.detachEvent("on" + "mousewheel", scrollHorizontally);
