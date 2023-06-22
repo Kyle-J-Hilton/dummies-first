@@ -9,7 +9,7 @@ import RippleLink from "./RippleLink";
 
 const HSC = () => {
 
- 
+
   
   useEffect(() => {
     let docWidth;
