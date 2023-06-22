@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import styles from "../../styles/SideScroll.module.css";
-
 import SectionOne from "./SideScrollSections/SectionOne";
 import SectionTwo from "./SideScrollSections/SectionTwo";
 import SectionThree from "./SideScrollSections/SectionThree";
@@ -10,7 +8,9 @@ import SectionFive from "./SideScrollSections/SectionFive";
 import RippleLink from "./RippleLink";
 
 const HSC = () => {
-   
+
+ 
+  
   useEffect(() => {
     let docWidth;
     let windowHeightCheck = window.innerHeight / 1.5;
@@ -114,9 +114,9 @@ const HSC = () => {
   };
 
   const handleTouchEnd = () => {
-    setTimeout(() => {
+     setTimeout(() => {
     window.cancelAnimationFrame(requestId);
-   }, 300);
+       }, 300);
   };
 
   const tScrollPage = () => {
@@ -185,9 +185,7 @@ const HSC = () => {
     } else {
       document.attachEvent("mousedown", dragScroll);
       document.attachEvent("touchstart", handleTouchStart);
-      contentRef.current.addEventListener("touchmove", handleTouchMove, {
-        passive: false,
-      });
+      document.attachEvent("touchmove", handleTouchMove);
       document.attachEvent("touchend", handleTouchEnd);
 
       document.attachEvent("on" + "mousewheel", scrollHorizontally);
@@ -201,7 +199,7 @@ const HSC = () => {
           passive: true,
         });
         contentRef.current.removeEventListener("touchmove", handleTouchMove, {
-          passive: false,
+          passive: true,
         });
         contentRef.current.removeEventListener("touchend", handleTouchEnd, {
          passive: true,
@@ -216,9 +214,7 @@ const HSC = () => {
       } else {
         document.detachEvent("mousedown", dragScroll);
         document.detachEvent("touchstart", handleTouchStart);
-         contentRef.current.removeEventListener("touchmove", handleTouchMove, {
-          passive: false,
-        });
+        document.detachEvent("touchmove", handleTouchMove);
         document.detachEvent("touchend", handleTouchEnd);
 
         document.detachEvent("on" + "mousewheel", scrollHorizontally);
@@ -248,4 +244,5 @@ const HSC = () => {
 };
 
 export default HSC;
+
 
