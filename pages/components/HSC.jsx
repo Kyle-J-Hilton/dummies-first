@@ -186,7 +186,9 @@ const handleTouchEnd = () => {
     } else {
       document.attachEvent("mousedown", dragScroll);
       document.attachEvent("touchstart", handleTouchStart);
-      document.attachEvent("touchmove", handleTouchMove);
+      contentRef.current.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
       document.attachEvent("touchend", handleTouchEnd);
 
       document.attachEvent("on" + "mousewheel", scrollHorizontally);
