@@ -128,14 +128,19 @@ const HSC = () => {
     document.documentElement.scrollLeft += scrollDelta;
     document.body.scrollLeft += scrollDelta;
 
-    if (Math.abs(scrollDelta) >= 0.2) {
-    scrollDelta *= 0.9;
-    requestId = window.requestAnimationFrame(tScrollPage);
-    } else {
-    scrollDelta = 0;
-    }
+    if (scrollDelta > 0) {
+      scrollDelta -= 0.2;
 
+      if (scrollDelta < 0) scrollDelta = 0;
+      requestId = window.requestAnimationFrame(tScrollPage);
+    } else if (scrollDelta < 0) {
+      scrollDelta += 0.2;
+
+      if (scrollDelta > 0) scrollDelta = 0;
+      requestId = window.requestAnimationFrame(tScrollPage);
+    }
   };
+
 
   const scrollHorizontally = (e) => {
     e = window.event || e;
