@@ -114,9 +114,9 @@ const HSC = () => {
   };
 
   const handleTouchEnd = () => {
-    
+    setTimeout(() => {
     window.cancelAnimationFrame(requestId);
-  
+   }, 300);
   };
 
   const tScrollPage = () => {
@@ -167,7 +167,7 @@ const HSC = () => {
     if (window.addEventListener) {
       contentRef.current.addEventListener("mousedown", dragScroll);
       contentRef.current.addEventListener("touchstart", handleTouchStart, {
-        passive: true,
+        passive: false,
       });
       contentRef.current.addEventListener("touchmove", handleTouchMove, {
         passive: false,
