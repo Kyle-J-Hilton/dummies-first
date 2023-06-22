@@ -117,9 +117,12 @@ const HSC = () => {
   requestId = window.requestAnimationFrame(tScrollPage);
 };
   
-const handleTouchEnd = () => {
-  window.cancelAnimationFrame(requestId);
-};
+  const handleTouchEnd = () => {
+     setTimeout(() => {
+    window.cancelAnimationFrame(requestId);
+       }, 300);
+  };
+
 
   const tScrollPage = () => {
     document.documentElement.scrollLeft += scrollDelta;
