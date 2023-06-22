@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+
 import styles from "../../styles/SideScroll.module.css";
+
 import SectionOne from "./SideScrollSections/SectionOne";
 import SectionTwo from "./SideScrollSections/SectionTwo";
 import SectionThree from "./SideScrollSections/SectionThree";
