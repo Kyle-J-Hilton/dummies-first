@@ -10,9 +10,7 @@ import SectionFive from "./SideScrollSections/SectionFive";
 import RippleLink from "./RippleLink";
 
 const HSC = () => {
-
- 
-  
+   
   useEffect(() => {
     let docWidth;
     let windowHeightCheck = window.innerHeight / 1.5;
