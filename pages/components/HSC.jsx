@@ -97,8 +97,8 @@ const HSC = () => {
 
   const handleTouchStart = (e) => {
    
-    startX = touch.pageX;
-    startY = touch.pageY;
+    startX = e.pageX || (e.touches && e.touches[0].pageX);
+    startY = e.pageY || (e.touches && e.touches[0].pageY);
     scrollDelta = 0;
     window.cancelAnimationFrame(requestId);
   };
