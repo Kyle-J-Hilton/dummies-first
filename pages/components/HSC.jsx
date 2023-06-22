@@ -103,7 +103,7 @@ const HSC = () => {
     window.cancelAnimationFrame(requestId);
   };
 
- const handleTouchMove = (e) => {
+const handleTouchMove = (e) => {
   e.preventDefault();
   const touch = e.touches[0];
   const x = touch.pageX;
